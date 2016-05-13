@@ -1,0 +1,34 @@
+Création d'une application sous W : un raccourcisseur d'URL
+
+Prototype d'un cahier des charges :
+Un raccourcisseur d'URL est un service notamment utilisé par les services de microblogging ou par les messageries instantanées. Car utiliser une url très longue est difficile (nombre de caractères est limité).
+
+Le site qui nous servira de modèle : https://bitly.com/
+
+Le principe de base est le suivant : 
+Une (très) longue URL est transformée en une URL courte à distribuer.
+Lorsque l'on clique sur le lien raccourci, on est redirigé vers l'url longue (celle d'origine).
+
+Nom de l'application : murl.ly - la murlification, la démurlification, murlifier,...
+
+Un seul modèle : MiniURL
+Champs :
+- le code identifiant le raccourci (unique)
+- url (champ url longue) (unique)
+- date de création
+- pseudo du créateur du raccourci (option)
+- le nombre d'accès au raccourci (une redirection = un accès)
+
+3 vues :
+- afficher toutes les redirections crées et leurs infos, triées ordre descendant, plus d'accès vers le moins
+- formulaire pour créer une redirection
+- une vue qui prend comme paramètre dans l'url le code et redirige
+=> 2 templates (la redirection n'en a pas besoin)
+
+donc 3 routes à définir...
+Une administration CRUD pour le modèle MiniURL (+ les utilisateurs)
+
+
+TO DO :
+
+vérifier que dans l’url transmise il y a http://
