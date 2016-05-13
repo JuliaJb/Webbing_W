@@ -1,5 +1,11 @@
 <?php $this->layout('layout', ['title' => 'login']) ?>
 
+<?php $this->start('css') ?>
+
+	<link rel="stylesheet" href="<?= $this->assetUrl('/css/connect.css') ?>">
+
+<?php $this->stop('css') ?>
+
 <?php $this->start('main') ?>
 
 	<div class="container vertical_align">
@@ -48,6 +54,14 @@
     </div> <!-- end container -->
 
 <?php $this->stop('main') ?>
+
+<?php $this->start('script') ?>
+
+
+	<script src="<?= $this->assetUrl('/js/connect.js') ?>"></script>
+
+
+<?php $this->stop('script') ?>
 
 
 

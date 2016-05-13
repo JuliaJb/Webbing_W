@@ -1,10 +1,20 @@
 <?php $this->layout('layout', ['title' => 'login']) ?>
 
-<?php $this->start('nav') ?>
+<?php $this->start('css') ?>
 
-include nav 
+	<link rel="stylesheet" href="<?= $this->assetUrl('/css/main.css') ?>">
 
-<?php $this->stop('nav') ?>
+<?php $this->stop('css') ?>
+
+<?php 
+
+$this->start('nav');
+
+	include '../app/templates/partials/nav.php';
+
+$this->stop('nav');
+
+?>
 
 
 
@@ -13,5 +23,14 @@ include nav
 
 
 <?php $this->stop('main') ?>
+
+
+<?php $this->start('script') ?>
+
+
+	<script src="<?= $this->assetUrl('/js/main.js') ?>"></script>
+
+
+<?php $this->stop('script') ?>
 
 

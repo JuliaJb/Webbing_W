@@ -23,7 +23,7 @@ class DefaultController extends Controller
 	public function home()
 	{
 		
-		echo "C'est la home";
+		$this->show('default/home');
 	}
 
 	public function forum()
