@@ -17,13 +17,20 @@
 	                <h2 class="login_head">Ma première connexion</h2>
 	                
 
-	                <form class="form_first_co" method="POST" action="/profil">
+	                <form class="form_first_co" method="POST">
 
-	                      <input type="text" class="radius_top" name="prenom" id="inputPrenom" placeholder="Prénom">
+	                    <input type="text" class="radius_top" name="prenom" id="inputPrenom" placeholder="Prénom">
 
-	                      <input type="text" class="radius_bottom" name="nom" id="inputNom" placeholder="Nom">
+	                    <input type="text" class="radius_bottom" name="nom" id="inputNom" placeholder="Nom">
 
-	                      <button type="submit" name="btnContinue" class="btn btn_login">M'inscrire</button>
+	                    <div class=<?php if (!empty($errors)) { echo "errors";} ?>>
+
+		                    <p><?php if(isset($errors['prenom'])) { echo $errors['prenom'];} ?></p>
+		                    <p><?php if(isset($errors['nom'])) { echo $errors['nom'];} ?></p>
+		                    <p><?php if(isset($errors['combinaison'])) { echo $errors['combinaison'];} ?></p>
+		                </div>
+
+	                      <button type="submit" name="inscription" class="btn btn_login">M'inscrire</button>
 
 	                </form>
 
@@ -37,13 +44,13 @@
 	                <h2 class="login_head">Je suis déjà venu !</h2>
 	              
 
-	                <form class="form_login" method="POST" action="/home">
+	                <form class="form_login" method="POST">
 
 	                      <input type="email" class="radius_top" name="prenom" id="inputPrenom" placeholder="Email">
 
 	                      <input type="password" class="radius_bottom" name="nom" id="inputNom" placeholder="Mot de passe">
 
-	                      <button type="submit" name="btnContinue" class="btn btn_connexion">Me connecter</button>
+	                      <button type="submit" name="connexion" class="btn btn_connexion">Me connecter</button>
 
 	                      <div class="forgot_password"><a href="#">Mot de Passe Oublié ?</a></div>
 

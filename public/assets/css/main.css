@@ -2,9 +2,26 @@
 
 
 body {
-	background-image: url('../img/fond2.jpg');
 	width: 100%;
-	background-repeat: no-repeat;
 	font-family: 'Poiret One';
 	height: 100%;
 }
+
+.navbar {
+	margin: 0;
+}
+
+.blocHome {
+	text-align: center;
+	padding: 50px;
+}
+
+
+.blocHome2{
+	background-color: #e7e7e7;
+	text-align: center;
+	padding: 50px;
+}
+
+
+
