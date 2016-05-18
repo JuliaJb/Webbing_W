@@ -7,6 +7,32 @@ use \W\Controller\Controller;
 class ForumController extends Controller
 {
 
+	
+	//List all Forum Topics 
+	public function post_list()
+	{
+
+		$manager = new \Manager\PostManager();
+
+		$result = $manager->findAll();
+
+		$this->show('default/forum_list', ['result' => $result]);
+
+	}
+
+	//Detail d'un Sujet
+	public function post_detail($id)
+	{
+		$manager = new \Manager\PostManager();
+
+		$result = $manager->find($id);
+
+		$this->show('default/forum_detail', ['result' => $result]);
+
+	}
+
+
+	//Create a New Topic 
 	public function post_create()
 	{
 
@@ -32,6 +58,7 @@ class ForumController extends Controller
 					'titre' => $_POST['inp_title'],
 					'message' => $_POST['inp_content'],
 					'id_user' => $_SESSION['id'],
+					'date_publication' => date('Y-m-d'),
 				];
 
 				$manager->insert($data, $stripTags = True);
@@ -41,10 +68,8 @@ class ForumController extends Controller
 
 		}
 
-
-
-
 		$this->show('default/forum_create', ['errors' => $errors]);
 	}
+
 
 }

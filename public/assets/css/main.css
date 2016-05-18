@@ -38,3 +38,8 @@ body {
 	background-color: #FF9100;
 	color: #000;
 }
+
+.forum_list {
+	margin: 10px auto;
+	border: 1px solid #eeeeee;
+}
