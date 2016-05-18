@@ -11,7 +11,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Marcus & Ginette</a>
+        <a class="navbar-brand" href="/home">Marcus & Ginette</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->

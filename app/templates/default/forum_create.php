@@ -3,6 +3,7 @@
 <?php $this->start('css') ?>
 
 	<link rel="stylesheet" href="<?= $this->assetUrl('/css/main.css') ?>">
+	<link rel="stylesheet" href="<?= $this->assetUrl('/css/forum.css') ?>">
 
 <?php $this->stop('css') ?>
 
@@ -20,7 +21,25 @@ $this->stop('nav');
 
 <?php $this->start('main') ?>
 
-	<h1>Publiez sur le Forum</h1>
+	<div id="forum_searchbar">
+		<form action="" method="POST">
+			<label for="forum_search">Quelle discussion cherchez-vous?</label>
+			<input type="text" name="forum_search" id="forum_search">
+			<button name="btn_search">Rechercher</button>
+		</form>
+	</div>
+	
+	<ol class="breadcrumb">
+		<li><a href="/">Home</a></li>
+		<li><a href="/forum">Forum</a></li>
+		<li class="active">Categorie</li>
+	</ol>
+
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Publiez sur le Forum</h1>
+		</div>
+	</div>
 
 	<div class="container vertical_align">
         <div class="row">
@@ -36,6 +55,7 @@ $this->stop('nav');
 
 		                    <p><?php if(isset($errors['title'])) { echo $errors['title'];} ?></p>
 		                    <p><?php if(isset($errors['content'])) { echo $errors['content'];} ?></p>
+		                    <p><?php if(isset($errors['category'])) { echo $errors['category'];} ?></p>
 		                </div>
 
 	                    <label for="inp_title">Titre</label>
@@ -43,6 +63,17 @@ $this->stop('nav');
 	                    
 	                    <label for="inp_content">Contenu</label>
 	                    <input type="text" class="form-control" name="inp_content" placeholder="Le contenu" id="inp_content">
+
+						<label for="sel_category">Catégorie</label>
+	                    <select class="form-control" name="inp_category" id="sel_category">
+						  <option value="France">France</option>
+						  <option value="Maurice">Maurice</option>
+						  <option value="Bachelor">Bachelor</option>
+						  <option value="Bachelorette">Bachelorette</option>
+						  <option value="Surprise">Surprise</option>
+						</select>
+
+
 
 	                    <button name="btn_f_create" id="btn_f_create" class="btn tb-margin-buffer">Creer</button>
 

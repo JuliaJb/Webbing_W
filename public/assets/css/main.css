@@ -4,6 +4,7 @@
 body {
 	width: 100%;
 	font-family: 'Poiret One';
+	font-size: 16px;
 	height: 100%;
 }
 
@@ -24,29 +25,4 @@ body {
 }
 
 
-/* ==========================//
- *        CODE ADRIANA
- * ==========================*/
 
-/* top-bottom-margin-buffer */
-.tb-margin-buffer {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-#btn_f_create {
-	background-color: #FF9100;
-	color: #000;
-}
-
-/* -- forum_list -- */
-.forum_list {
-	margin: 10px auto;
-	border: 1px solid #eeeeee;
-}
-
-#forum_searchbar {
-	background-color: #222;
-	color: white;
-
-}

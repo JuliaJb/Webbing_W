@@ -32,6 +32,16 @@ class ForumController extends Controller
 	}
 
 
+	//Filtrer List par catégorie
+	public function post_filter($cat)
+	{
+		$manager = new \Manager\PostManager();
+
+		$filtered = $manager->get_post_by_filter($cat);
+
+		$this->show('default/forum_list', ['filtered' => $filtered]);
+	}
+
 	//Create a New Topic 
 	public function post_create()
 	{
@@ -50,6 +60,11 @@ class ForumController extends Controller
 			if(empty($_POST['inp_content']))
 			{
 				$errors['content'] = "Vous avez oublié d'inclure le contenu";
+			}
+
+			if(!isset($_POST['inp_category']))
+			{
+				$erros['category'] = "Vous devez indiquer une catégorie.";
 			}	
 		
 			if (empty($errors))
@@ -59,6 +74,7 @@ class ForumController extends Controller
 					'message' => $_POST['inp_content'],
 					'id_user' => $_SESSION['id'],
 					'date_publication' => date('Y-m-d'),
+					'category' => $_POST['inp_category'],
 				];
 
 				$manager->insert($data, $stripTags = True);
