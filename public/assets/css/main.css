@@ -24,4 +24,17 @@ body {
 }
 
 
+/* ==========================//
+ *        CODE ADRIANA
+ * ==========================*/
 
+/* top-bottom-margin-buffer */
+.tb-margin-buffer {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#btn_f_create {
+	background-color: #FF9100;
+	color: #000;
+}
