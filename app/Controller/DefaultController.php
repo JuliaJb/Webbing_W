@@ -20,11 +20,6 @@ class DefaultController extends Controller
 		echo "C'est la forum";
 	}
 
-	public function photo()
-	{
-		
-		echo "C'est la photo";
-	}
 
 	public function infos()
 	{
