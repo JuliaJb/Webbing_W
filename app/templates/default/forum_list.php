@@ -20,6 +20,14 @@ $this->stop('nav');
 
 <?php $this->start('main') ?>
 
+	<div class="col-lg-12" id="forum_searchbar">
+		<form action="" method="POST">
+			<label for="forum_search"></label>
+			<input type="text" name="forum_search" id="forum_search">
+			<button name="btn_search">Rechercher</button>
+		</form>
+	</div>
+
 	<h1>Le Forum</h1>
 
 	<div class="container">

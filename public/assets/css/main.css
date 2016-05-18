@@ -39,7 +39,14 @@ body {
 	color: #000;
 }
 
+/* -- forum_list -- */
 .forum_list {
 	margin: 10px auto;
 	border: 1px solid #eeeeee;
+}
+
+#forum_searchbar {
+	background-color: #222;
+	color: white;
+
 }
