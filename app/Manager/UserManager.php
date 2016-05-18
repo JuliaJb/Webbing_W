@@ -15,6 +15,18 @@ class UserManager extends \W\Manager\Manager {
 		return $sth->fetch();
 	}
 
+	public function checkConnexion($email, $password)
+	{
+
+		$sql = "SELECT * FROM " . $this->table . " WHERE email = :email AND password = :password";
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(":email", $email);
+		$sth->bindValue(":password", $password);
+		$sth->execute();
+
+		return $sth->fetch();
+	}
+
 
 
 

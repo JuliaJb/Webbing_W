@@ -46,9 +46,17 @@
 
 	                <form class="form_login" method="POST">
 
-	                      <input type="email" class="radius_top" name="prenom" id="inputPrenom" placeholder="Email">
+	                      <input type="email" class="radius_top" name="email" id="inputPrenom" placeholder="Email">
 
-	                      <input type="password" class="radius_bottom" name="nom" id="inputNom" placeholder="Mot de passe">
+	                      <input type="password" class="radius_bottom" name="password" id="inputNom" placeholder="Mot de passe">
+
+	                      <div class=<?php if (!empty($errorsCo)) { echo "errors";} ?>>
+
+		                    <p><?php if(isset($errorsCo['email'])) { echo $errorsCo['email'];} ?></p>
+		                    <p><?php if(isset($errorsCo['password'])) { echo $errorsCo['password'];} ?></p>
+		                    <p><?php if(isset($errorsCo['connexion'])) { echo $errorsCo['connexion'];} ?></p>
+		                 
+		                </div>
 
 	                      <button type="submit" name="connexion" class="btn btn_connexion">Me connecter</button>
 
