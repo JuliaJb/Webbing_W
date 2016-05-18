@@ -12,21 +12,20 @@ class PhotoController extends Controller
 	public function photo()
 	{
 		
+		$manager = new \Manager\PhotoManager();
 		$maxsize = 1048576;
 		$erreurPhoto = [];
+		$maxwidth = "";
+		$maxheight = "";
 		
 		if (isset($_POST['poster'])) 
 		{
 
-			echo "good";
 			if ($_FILES['photo']['error'] > 0)
 			{
-				echo "Erreur lors du transfert";
+				$erreurPhoto['erreur'] = "Erreur lors du transfert";
 			}
-			else
-			{
-				var_dump($_FILES['photo']);
-			}
+
 
 			// type d'erreur
 			// UPLOAD_ERR_NO_FILE : fichier manquant.
@@ -37,7 +36,7 @@ class PhotoController extends Controller
 
 			// TAILLE DU FICHIER
 
-			if ($_FILES['icone']['size'] > $maxsize) 
+			if ($_FILES['photo']['size'] > $maxsize) 
 			{
 				$erreurPhoto['size'] = "Le fichier est trop gros";
 			}
@@ -49,21 +48,62 @@ class PhotoController extends Controller
 			//1. strrchr renvoie l'extension avec le point (« . »).
 			//2. substr(chaine,1) ignore le premier caractère de chaine.
 			//3. strtolower met l'extension en minuscules.
-			$extension_upload = strtolower(  substr(  strrchr($_FILES['icone']['name'], '.')  ,1)  );
+			$extension_upload = strtolower(  substr(  strrchr($_FILES['photo']['name'], '.')  ,1)  );
 
-			if ( in_array($extension_upload,$extensions_valides) ) 
+			if ( !in_array($extension_upload,$extensions_valides) ) 
 			{
-				echo "Extension correcte";
+				$erreurPhoto['extension'] = "mauvaise extension";
 			}
 
+			// DIMENSION DU FICHIER
 
+			// $image_sizes = getimagesize($_FILES['photo']['tmp_name']);
 
+			// if ($image_sizes[0] > $maxwidth OR $image_sizes[1] > $maxheight) 
+			// {
+			// 	$erreurPhoto['dimension'] = "Image trop grande";
+			// }
 
+			// DEPLACEMENT FICHIER
 
-			$this->show('default/photo');
+			if (empty($erreurPhoto)) {
+			
+
+				$file = md5(uniqid(rand(), true));
+				$nom = "{$file}.{$extension_upload}";
+				$dossier = "assets/photo/{$file}.{$extension_upload}";
+				$resultat = move_uploaded_file($_FILES['photo']['tmp_name'],$dossier);
+
+				if ($resultat) 
+				{
+
+					$data = [
+						'filename' => $_FILES['photo']['name'],
+						'filesize' => $_FILES['photo']['size'],
+						'category' => "category",
+						'finalname' => $nom,
+						'user_lastname' => $_SESSION['lastname'],
+						'user_firstname' => $_SESSION['firstname'],
+					];
+						
+					$result = $manager->insert($data);
+
+				}
+
+			}
+
+			$result = $manager->findAll($orderBy = "1", $orderDir = "ASC");
+
+			$this->show('default/photo', ['result' => $result, 'erreurPhoto' => $erreurPhoto]);
+
+			
 		}
 
-		$this->show('default/photo');
+
+		$result = $manager->findAll($orderBy = "1", $orderDir = "DESC");
+
+
+		$this->show('default/photo', ['result' => $result]);
 	}
 
 

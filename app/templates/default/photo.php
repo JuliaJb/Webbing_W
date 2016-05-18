@@ -22,18 +22,55 @@ $this->stop('nav');
 
 <div class="container">
 
-	<form class="form_photo" method="POST" enctype="multipart/form-data">
+	<div class="row">
 
-        <input type="text" name="prenom" placeholder="Prénom">
+		<form class="form_photo" method="POST" enctype="multipart/form-data">
 
-        <input type="text" name="nom" placeholder="Nom">
+			<div class="input-file-container">
+				<input class="input-file" id="my-file" type="file" name="photo">
+				<label for="my-file" class="input-file-trigger" tabindex="0">Sélectionner un fichier</label>
+			</div>
+			<p class="file-return"></p>
 
-        <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-        <input type="file" name="photo">
+			<div class=<?php if (!empty($erreurPhoto)) { echo "errors";} ?>>
 
-        <button type="submit" name="poster" class="btn">Poster</button>
+				<?php if (!empty($erreurPhoto)): ;?>
 
-    </form>
+					<?php foreach ($erreurPhoto as $key => $value): ?>
+
+                		<p><?php echo $erreurPhoto[$key]; ?></p>
+
+                	<?php endforeach; ?>
+                
+                <?php endif; ?>
+            </div>
+
+	        <button type="submit" name="poster" class="btn">Poster</button>
+
+	    </form>
+
+
+
+    </div>
+
+
+
+    <div class="row">
+
+	    <?php foreach ($result as $key => $value): ?>
+
+	    	<div class="col-md-3">
+		
+				<img src="/assets/photo/<?php echo $result[$key]['finalname']; ?>" alt="photo" width="200px">
+
+				<p>Poster par <?= $_SESSION['firstname']." ".$_SESSION['lastname']; ?></p>
+
+			</div>
+
+		<?php endforeach; ?>
+    	
+
+    </div>
 
 </div>
 

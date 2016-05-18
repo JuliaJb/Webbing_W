@@ -29,8 +29,7 @@ class DefaultController extends Controller
 
 	public function deconnexion()
 	{
-		unset($_SESSION['lastname']);
-		unset($_SESSION['firstname']);
+		unset($_SESSION);
 
 		$this->redirectToRoute('login');
 
