@@ -21,10 +21,16 @@ class DefaultController extends Controller
 	}
 
 
-	public function infos()
+	public function info_france()
 	{
 		
-		echo "C'est la infos";
+		$this->show('default/info_france');
+	}
+
+	public function info_maurice()
+	{
+		
+		$this->show('default/info_maurice');
 	}
 
 	public function deconnexion()

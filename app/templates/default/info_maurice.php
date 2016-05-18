@@ -65,19 +65,7 @@ $this->stop('nav');
 	<div class="row">
   		<div class="col-md-12 bloc_grey">
 	        
-  			<div class="col-md-4">
-	  			<h3>Mariage Civil à Saint Germain En Laye</h3>
-		  		<p>24 Juin 2017</p>
-	        </div>
-
-	        <div class="col-md-4">
-	  			<img src="/assets/img/save_the_date.png" alt="RSVP">
-	  		</div>
-
-	  		<div class="col-md-4">
-	  			<h3>Mariage Religieux à L'île Maurice</h3>
-		  		<p>28 Octobre 2017</p>
-	        </div>
+	  		<h3>Bienvenue à L'ile Maurice</h3>
 
   		</div>
 	</div>
@@ -85,32 +73,23 @@ $this->stop('nav');
 	<div class="row">
   		<div class="col-md-12 bloc_white">
 
-  			<div class="col-md-4">
+  			<h2>Planning</h2>
 
-	  			<form method="POST">
+  		</div>
+	</div>
 
-	                <p>Seriez vous présent le jour de notre mariage en France ? *</p>
-	                <input type="radio" name="rsvpFr" value="1"> Oui
-	                <input type="radio" name="rsvpFr" value="0"> Non
-	                <br>
-	                <button name="btnCreateProfile" id="btnChangeId" class="btn btn_profile">Valider</button>
-	            </form>
-	        </div>
+	<div class="row">
+  		<div class="col-md-12 bloc_grey">
+	        
+	  		<h2>Le jolie mairie de Saint Germain En Laye</h2>
 
-	        <div class="col-md-4">
-	  			<img src="/assets/img/rsvp.png" alt="RSVP" width="200px">
-	  		</div>
+  		</div>
+	</div>
 
-	  		<div class="col-md-4">
-	  			<form method="POST">
+	<div class="row">
+  		<div class="col-md-12 bloc_white">
 
-	                <p>Seriez vous présent le jour de notre mariage à l'ile Maurice ? *</p>
-	                <input type="radio" name="rsvpMa" value="1"> Oui
-	                <input type="radio" name="rsvpMa" value="0"> Non
-	                <br>
-	                <button name="btnCreateProfile" id="btnChangeId" class="btn btn_profile">Valider</button>
-	            </form>
-	        </div>
+  			<h2>L'incroyable lieu de la réception</h2>
 
   		</div>
 	</div>

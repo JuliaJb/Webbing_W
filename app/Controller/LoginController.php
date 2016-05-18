@@ -213,6 +213,13 @@ class LoginController extends Controller
 		// AFFICHAGE DE LA PAGE PROFIL QUOI QU'IL ARRIVE
 		
 		$this->show('default/profil');
+
+	}
+	
+
+	public function mon_profil()
+	{
+		$this->show('default/mon_profil');
 	}
 
 
