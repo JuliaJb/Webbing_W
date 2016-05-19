@@ -23,7 +23,7 @@ $this->stop('nav');
 
 	<div id="forum_searchbar">
 		<form action="" method="POST">
-			<label for="forum_search">Quelle discussion cherchez-vous?</label>
+			<label for="forum_search"><h3>Quel sujet cherchez-vous?</h3></label>
 			<input type="text" name="forum_search" id="forum_search">
 			<button name="btn_search">Rechercher</button>
 		</form>
@@ -37,7 +37,7 @@ $this->stop('nav');
 
 	<div class="container">
 		<div class="jumbotron">
-			<h2>Bienvenu au Forum de Marcus et Ginette</h2>
+			<h2>Bienvenu sur le Forum de Marcus et Ginette</h2>
 			<a href="/forum/create" class="btn btn-default btn-lg new_post">
 			  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nouveau Sujet
 			</a>
@@ -56,14 +56,6 @@ $this->stop('nav');
 		</ul>
 	</div>
 
-	<pre>
-		<?php print_r($result)?>
-	</pre>
-
-	<pre>
-		<?php print_r($filtered)?>
-	</pre>
-
 	<?php if (!empty($result)) : ?>
 	<div class="container vertical_align">
         <div class="row">
@@ -71,12 +63,12 @@ $this->stop('nav');
               	
 					<?php foreach ($result as $key => $value) : ?>
 						<div class="forum_list">
-							<a href="forum/detail/<?= $value['id']?>"><h2 class="profile_head"> <?= $value['titre'] ?> </h2></a>
+							<a href="/forum/detail/<?= $value['id']?>"><h2 class="profile_head"> <?= $value['titre'] ?> </h2></a>
 							<p> <?= $value['titre'] ?> </p>
 							<p> <?= $value['message'] ?> </p>
 							<p> <?= $value['date_publication'] ?> </p>
 							<p> <?= $value['category'] ?> </p>
-		              	</div> <!-- end bloc_profile -->
+		              	</div> 
 
 					<?php endforeach ; ?>
 	                
@@ -93,8 +85,12 @@ $this->stop('nav');
               	
 					<?php foreach ($filtered as $key => $value) : ?>
 						<div class="forum_list">
-							<?= $key['title']." and ".$key['message'] ?>
-		              	</div> <!-- end bloc_profile -->
+							<a href="/forum/detail/<?= $value['id']?>"><h2 class="profile_head"> <?= $value['titre'] ?> </h2></a>
+							<p> <?= $value['titre'] ?> </p>
+							<p> <?= $value['message'] ?> </p>
+							<p> <?= $value['date_publication'] ?> </p>
+							<p> <?= $value['category'] ?> </p>
+		              	</div>
 
 					<?php endforeach ; ?>
 	                
