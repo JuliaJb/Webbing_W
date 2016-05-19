@@ -18,7 +18,10 @@ $this->stop('nav');
 
 
 
+
 <?php $this->start('main') ?>
+
+
 
 <div class="container">
 

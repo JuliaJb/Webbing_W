@@ -5,6 +5,7 @@
 		['GET', '/home', 'Default#home', 'home'],
 		['GET|POST', '/profil', 'Login#profil', 'profil'],
 		['GET|POST', '/mon_profil', 'Login#mon_profil', 'mon_profil'],
+		['GET|POST', '/admin', 'Admin#admin', 'admin'],
 		['GET|POST', '/photo', 'Photo#photo', 'photo'],
 		['GET', '/deconnexion', 'Default#deconnexion', 'deconnexion'],
 		['GET', '/info_maurice', 'Default#info_maurice', 'info_maurice'],
