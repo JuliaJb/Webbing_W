@@ -1,0 +1,52 @@
+/* ==========================//
+ *     CODE ADRIANA FORUM
+ * ==========================*/
+
+/* top-bottom-margin-buffer */
+.tb-margin-buffer {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#btn_f_create {
+	background-color: #FF9100;
+	color: #000;
+}
+
+/* -- forum_list -- */
+.forum_list {
+	margin: 10px auto;
+	padding: 20px;
+	border: 1px solid #eeeeee;
+	box-shadow: 2px 2px 2px #ccc;
+}
+
+#forum_searchbar {
+	background-color: #726A71;
+	color: white;
+	height: 60px;
+	padding: 0;
+	margin: 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+label[for=forum_search] {
+	font-size: 2rem;
+}
+
+#forum_search {
+	height: 30px;
+	width: 250px;
+	border: 2px solid #fff;
+	border-radius: 5px;
+}
+
+.new_post {
+	background-color: orange;
+}
+
+/* -- forum_create -- */

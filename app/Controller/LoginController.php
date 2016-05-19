@@ -88,6 +88,8 @@ class LoginController extends Controller
 
 					$_SESSION["lastname"] = $user['lastname'];
 					$_SESSION["firstname"] = $user['firstname'];
+					$_SESSION["id"] = $user['id'];
+
 
 					$this->redirectToRoute('home');
 
