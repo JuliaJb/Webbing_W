@@ -13,6 +13,7 @@ $this->start('nav');
 
     include '../app/templates/partials/nav.php';
 
+
 $this->stop('nav');
 
 ?>
@@ -48,9 +49,11 @@ $this->stop('nav');
                     
                 <div class="forum_list">
                     <h2>Quelques Stats</h2>
-                    <p> Nombre d'invités </p>
-                    <p> Les ouis </p>
-                    <p> Les nons </p>
+                    <p> <?= $nbInvites['count'] ?> invités </p>
+                    <p> <?= $yesGuestCountMaurice['count'] ?> ouis Maurice </p>
+                    <p> <?= $noGuestCountMaurice['count'] ?> nons Maurice </p>
+                    <p> <?= $yesGuestCountFrance['count'] ?> ouis France </p>
+                    <p> <?= $noGuestCountFrance['count'] ?> nons France </p>
                 </div> 
 
                     

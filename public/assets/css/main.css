@@ -44,12 +44,12 @@ h1, h2, h3, h4, h5, h6 {
 	// ************************************ */
 .errors {
   width: 80%;
-    padding: 15px;
-    background: rgba(251,233,231,0.3);
-    margin: 10px auto 0;
-    border-radius: 15px;
-    color: rgba(96, 0, 1, 1);
-    font-weight: bold;
+  padding: 15px;
+  background: rgba(251,233,231,0.3);
+  margin: 10px auto 0;
+  border-radius: 15px;
+  color: rgba(96, 0, 1, 1);
+  font-weight: bold;
 }
 
 
@@ -67,6 +67,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: all .4s;
   cursor: pointer;
   border-radius: 10px;
+  font-size: 12px;
+  text-align: center;
 }
 
 .js .input-file {
@@ -107,15 +109,29 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
+.picture_frame {
+  text-align: center;
+  background: #e7e7e7;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.photo {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.name_poster {
+  font-family: 'Poiret One';
+}
+
   /* ************************************ //
   //                                      //
   //               Admin                  //
   //                                      //
   // ************************************ */
 
-/*#adminProfile {
-  display: none;
-}*/
 
 
 .visible {

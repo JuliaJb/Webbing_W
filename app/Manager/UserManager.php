@@ -84,6 +84,54 @@ class UserManager extends \W\Manager\Manager {
 		return $sth->fetch();
 	}
 
+	public function guestCount()
+	{
+		$sql = "SELECT COUNT(*) as count FROM " . $this->table;
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+
+		return $sth->fetch();
+	}
+
+	public function yesGuestCountMaurice()
+	{
+		$sql = "SELECT COUNT(*) as count FROM " . $this->table . " WHERE rsvpMa = :rsvpMa";
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(":rsvpMa", "1");
+		$sth->execute();
+
+		return $sth->fetch();
+	}
+
+	public function noGuestCountMaurice()
+	{
+		$sql = "SELECT COUNT(*) as count FROM " . $this->table . " WHERE rsvpMa = :rsvpMa";
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(":rsvpMa", "0");
+		$sth->execute();
+
+		return $sth->fetch();
+	}
+
+	public function yesGuestCountFrance()
+	{
+		$sql = "SELECT COUNT(*) as count FROM " . $this->table . " WHERE rsvpFr = :rsvpFr";
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(":rsvpFr", "1");
+		$sth->execute();
+
+		return $sth->fetch();
+	}
+
+	public function noGuestCountFrance()
+	{
+		$sql = "SELECT COUNT(*) as count FROM " . $this->table . " WHERE rsvpFr = :rsvpFr";
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(":rsvpFr", "0");
+		$sth->execute();
+
+		return $sth->fetch();
+	}
 
 
 }

@@ -93,6 +93,10 @@ $this->stop('nav');
 
                         <input type="hidden" name="id" value="<?php if(isset($profil['id'])) { echo $profil['id'];} ?>">
 
+                        <input type="text" name="firstname" placeholder="Prénom *" value="<?php if(isset($profil['firstname'])) { echo $profil['firstname'];} ?>">
+
+                        <input type="text" name="lastname" placeholder="Nom *" value="<?php if(isset($profil['lastname'])) { echo $profil['lastname'];} ?>">
+
                         <input type="email" name="email" placeholder="Email *" value="<?php if(isset($profil['email'])) { echo $profil['email'];} ?>">
 
                         <input type="password" name="password" placeholder="Mot de Passe *" value="<?php if(isset($profil['password'])) { echo $profil['password'];} ?>">

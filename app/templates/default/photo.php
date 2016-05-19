@@ -31,7 +31,7 @@ $this->stop('nav');
 
 			<div class="input-file-container">
 				<input class="input-file" id="my-file" type="file" name="photo">
-				<label for="my-file" class="input-file-trigger" tabindex="0">Sélectionner un fichier</label>
+				<label for="my-file" class="input-file-trigger" tabindex="0">Ma photo</label>
 			</div>
 			<p class="file-return"></p>
 
@@ -62,11 +62,11 @@ $this->stop('nav');
 
 	    <?php foreach ($result as $key => $value): ?>
 
-	    	<div class="col-md-3">
+	    	<div class="col-md-3 picture_frame">
 		
-				<img src="/assets/photo/<?php echo $result[$key]['finalname']; ?>" alt="photo" width="200px">
+				<img class="photo" src="/assets/photo/<?php echo $result[$key]['finalname']; ?>" alt="photo" width="200px">
 
-				<p>Poster par <?= $_SESSION['firstname']." ".$_SESSION['lastname']; ?></p>
+				<p class="name_poster">Posté par <?= $_SESSION['firstname']." ".$_SESSION['lastname']; ?></p>
 
 			</div>
 
