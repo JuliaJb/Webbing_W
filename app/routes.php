@@ -11,7 +11,7 @@
 		['GET', '/info_france', 'Default#info_france', 'info_france'],
 		['GET|POST', '/forum/create', 'Forum#post_create', 'forum_create'],
 		['GET', '/forum', 'Forum#post_list', 'forum'],
-		['GET', '/forum/[:cat]', 'Forum#post_filter', 'filter'],
+		['GET', '/forum/[a:cat]', 'Forum#post_filter', 'filter'],
 		['GET', '/forum/detail/[:id]', 'Forum#post_detail', 'forum_detail'],
 
 	);
