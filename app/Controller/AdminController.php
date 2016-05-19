@@ -54,30 +54,45 @@ class AdminController extends Controller
 		$manager = new \Manager\UserManager();
 		$invites = $manager->findAll($orderBy = "1", $orderDir = "ASC");
 
-		
+		$isvisible = "novisible";
+
+		// AU CLIC SUR LE BOUTON OK
+		if (isset($_POST['btnAdminNames'])) {
+
+			$isvisible = "visible";
+				
+			$profil = $manager->findGuestByNames($_POST['firstname'], $_POST['lastname']);
+				
+			$this->show('admin/profil_invites', ['invites' => $invites, 'profil' => $profil, 'isvisible' => $isvisible]);	
 
 
-		if (isset($_POST['btnAdminProfile'])) {
-
-			if (isset($_POST['firstname'])) {
-				$lastname = $manager->findLastByFirst($_POST['firstname']);
-				var_dump($lastname);
-
-
-				$profil = $manager->findGuestByNames($_POST['firstname'], $_POST['lastname']);
-				var_dump($profil);
-
-				$this->show('admin/profil_invites', ['invites' => $invites, 'lastname' => $lastname, 'profil' => $profil]);
-			}
-			
-			
 		}
 
+		// AU CLIC SUR LE BOUTON ENREGISTRER MODIFICATIONS
+		if (isset($_POST['btnAdminProfile'])) {
+			
+			$data = [
+					'email' => $_POST['email'],
+					'password' => $_POST['password'],
+					'children' => $_POST['enfants'],
+					'diet' => $_POST['regime'],
+					'aliments' => $_POST['aliment_specs'],
+					'rsvpMa' => $_POST['rsvpMa'],
+					'rsvpFr' => $_POST['rsvpFr'],
+				];
+					
+			$result = $manager->update($data, $_POST['id']);
 
+			$message = "Le profil a bien été modifié !";
 
+			$this->show('admin/profil_invites', ['invites' => $invites, 'isvisible' => $isvisible, 'message' => $message]);
 
-		$this->show('admin/profil_invites', ['invites' => $invites]);
+		}
+
+		$this->show('admin/profil_invites', ['invites' => $invites, 'isvisible' => $isvisible]);
 	}
+
+
 
 	public function info_une()
 	{	

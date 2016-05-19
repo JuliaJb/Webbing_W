@@ -67,12 +67,4 @@ $this->stop('nav');
 <?php $this->stop('main') ?>
 
 
-<?php $this->start('script') ?>
-
-
-    <script src="<?= $this->assetUrl('/js/main.js') ?>"></script>
-
-
-<?php $this->stop('script') ?>
-
 

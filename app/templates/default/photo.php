@@ -86,7 +86,7 @@ $this->stop('nav');
 <?php $this->start('script') ?>
 
 
-	<script src="<?= $this->assetUrl('/js/main.js') ?>"></script>
+	<script src="<?= $this->assetUrl('/js/photo.js') ?>"></script>
 
 
 <?php $this->stop('script') ?>

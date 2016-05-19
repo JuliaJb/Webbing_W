@@ -71,16 +71,6 @@ class UserManager extends \W\Manager\Manager {
 		return $sth->fetchAll();
 	}
 
-	public function findLastByFirst($firstname)
-	{
-
-		$sql = "SELECT lastname FROM " . $this->table . " WHERE firstname = :firstname";
-		$sth = $this->dbh->prepare($sql);
-		$sth->bindValue(":firstname", $firstname);
-		$sth->execute();
-
-		return $sth->fetchAll();
-	}
 
 	public function findGuestByNames($firstname, $lastname)
 	{
