@@ -16,7 +16,7 @@ class ForumController extends Controller
 
 		$result = $manager->findAll();
 
-		$this->show('default/forum_list', ['result' => $result]);
+		$this->show('forum/forum_list', ['result' => $result]);
 
 	}
 
@@ -25,9 +25,42 @@ class ForumController extends Controller
 	{
 		$manager = new \Manager\PostManager();
 
-		$result = $manager->find($id);
+		$post = $manager->find($id);
 
-		$this->show('default/forum_detail', ['result' => $result]);
+
+		//Afficher toutes les réponses : 
+		$rs_manager = new \Manager\ReponseManager();
+
+		$reponses = $rs_manager->get_post_reply($id);
+
+
+		//INSERT Réponse à un sujet:
+		$r_errors = array();
+
+		if (isset($_POST['btn_f_reply']))
+		{
+			if(empty($_POST['inp_content']))
+			{
+				$r_errors['content'] = "Vous avez oublié votre réponse.";
+			}
+			else
+			{
+
+				$data = [
+					'id_user' => $_SESSION['id'],
+					'date_pub' => date('Y-m-d'),
+					'id_post' => $id,
+					'message' => $_POST['inp_content'],
+				];
+
+				$insert = $rs_manager->insert($data);
+
+				$this->redirectToRoute('forum_detail', ['id'=> $id]);
+			}		
+		}
+
+		$this->show('forum/forum_detail', ['post' => $post, 'reponses' => $reponses, 
+			'r_errors'=> $r_errors]);
 
 	}
 
@@ -39,7 +72,7 @@ class ForumController extends Controller
 
 		$filtered = $manager->get_post_by_filter($cat);
 
-		$this->show('default/forum_list', ['filtered' => $filtered]);
+		$this->show('forum/forum_list', ['filtered' => $filtered]);
 	}
 
 	//Create a New Topic 
@@ -84,7 +117,15 @@ class ForumController extends Controller
 
 		}
 
-		$this->show('default/forum_create', ['errors' => $errors]);
+		$this->show('forum/forum_create', ['errors' => $errors]);
+	}
+
+
+	//Répondre un sujet
+
+	public function post_reply() 
+	{
+		return "ok";
 	}
 
 
