@@ -134,4 +134,25 @@ class UserManager extends \W\Manager\Manager {
 	}
 
 
+	public function get_emails_maurice()
+	{
+		$sql = "SELECT users.email FROM " . $this->table . " INNER JOIN roles_users ON roles_users.id_user = users.id INNER JOIN roles ON roles_users.id_role = roles.id WHERE roles_users.id_role = 3";
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
+
+
+	public function get_emails_france()
+	{
+
+		$sql = "SELECT users.email FROM " . $this->table . " INNER JOIN roles_users ON roles_users.id_user = users.id INNER JOIN roles ON roles_users.id_role = roles.id WHERE roles_users.id_role = 2";
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+
+		return $sth->fetchAll();
+
+	}
+
 }

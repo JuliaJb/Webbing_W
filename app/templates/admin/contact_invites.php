@@ -48,9 +48,9 @@ $this->stop('nav');
                 <div class="forum_list">
                     <h2>Contactez vos invités par email</h2>
 
-                    <form class="form-horizontal" method="POST" action="/index.php/email">
+                    <h3><?= (isset($message))? $message:""; ?></h3>
 
-                        <p><?php if(isset($message)){ echo $message; } ?></p>
+                    <form class="form-horizontal" method="POST">
 
                         <div class="form-group">
                             <label for="emailId" class="col-sm-2 control-label">Objet</label>
@@ -82,7 +82,7 @@ $this->stop('nav');
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                              <button type="submit" class="btn btn-default" name="envoyer">Envoyer</button>
+                              <button class="btn btn-default" name="envoyer">Envoyer</button>
                             </div>
                         </div>
                     </form>

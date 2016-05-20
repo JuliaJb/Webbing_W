@@ -36,65 +36,66 @@ class AdminController extends Controller
 	public function contact_invites()
 	{	
 
-		// function envoi_email($subject, $body, $groupeMa, $groupeFr)
-		// {
-		// 	$usersFr = get_emails_france();
-		// 	$usersMa = get_emails_maurice();
+		$manager = new \Manager\UserManager();
+		$invites = $manager->findAll($orderBy = "1", $orderDir = "ASC");
+		$emailMaurice = $manager->get_emails_maurice();
+		$emailFrance = $manager->get_emails_france();
 
-		// 	// var_dump($usersMa);
-		// 	// echo "<br>";
-		// 	// var_dump($usersFr);
+		$listeEmailMa = "";
+		$listeEmailFr = "";
 
-		// 	require_once 'vendor/autoload.php';
+		foreach ($emailMaurice as $key => $value) {
+			$listeEmailMa .= $emailMaurice[$key]['email'].", ";
+		}
 
-		// 	$mail = new PHPMailer;
-
-		// 	$mail->isSMTP();  // Set mailer to use SMTP
-
-		// 	$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-		// 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-		// 	$mail->Username = 'wf3fev2016@gmail.com';                 // SMTP username
-		// 	$mail->Password = 'webforce3';                           // SMTP password
-		// 	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-		// 	$mail->Port = 587;                                    // TCP port to connect to
-
-		// 	$mail->setFrom('wf3fev2016@gmail.com', 'Julia');
+		foreach ($emailFrance as $key => $value) {
+			$listeEmailFr .= $emailFrance[$key]['email'].", ";
+		}
 
 
-		// 	if (isset($_POST['groupeFr'])) {
-		// 		for ($i=0; $i < count($usersFr) ; $i++) { 
-		// 			$mail->addAddress($usersFr[$i]['mail'], 'test');
-		// 		}
-		// 	}
+		if (isset($_POST['envoyer'])) {
 
-		// 	if (isset($_POST['groupeMa'])) {
-		// 		for ($i=0; $i < count($usersMa) ; $i++) { 
-		// 			$mail->addAddress($usersMa[$i]['mail'], 'test');
-		// 		}
-		// 	}
+			$message = "";
+			
+			if( empty($_POST['objet']) || empty($_POST['contenu']) )
+			{
+				$message = "No arguments Provided!";
 
-		// 	// $mail->addReplyTo('info@example.com', 'Information');
-		// 	// $mail->addCC('cc@example.com');
-		// 	// $mail->addBCC('bcc@example.com');
+				$this->show('admin/contact_invites', ['message' => $message]);
+			}
+			else
+			{
+				$objet = $_POST['objet'];
+				$contenu = $_POST['contenu'];
 
-		// 	// $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-		// 	// $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-		// 	$mail->isHTML(true);                                  // Set email format to HTML
 
-		// 	$mail->Subject = $subject;
+				if ( isset($_POST['groupeMa']) && isset($_POST['groupeMa']) ) {
+					$to = $listeEmailMa.$listeEmailFr;
+				}
+				else if (isset($_POST['groupeMa'])) {
+					$to = $listeEmailMa;
+				}
+				else if (isset($_POST['groupeFr'])) {
+					$to = $listeEmailFr;
+				}
 
-		// 	$mail->Body    = $body;
 
-		// 	$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+				$email_subject = $objet;
+				$email_body = $contenu;
+				$headers = "From: noreply@julia-jacob.com\n"; 
+				$headers .= "Reply-To:";	
+				mail($to,$email_subject,$email_body,$headers);
 
-		// 	if(!$mail->send()) {
-		// 	    $message = 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
-		// 	} else {
-		// 	    $message = 'Votre email a bien été envoyé. Vous pouvez en renvoyer un si vous le souhaitez';
-		// 	}
+				$message = "Votre message a bien été envoyé :)";
 
-		// 	return $message;
-		// }
+				$this->show('admin/contact_invites', ['message' => $message]);		
+			}	
+				
+
+			$this->show('admin/contact_invites', ['message' => $message]);
+
+		}
+
 
 
 
