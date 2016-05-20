@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"r_",
+				"r_errors"
+			],
+			[
 				"mar",
 				"margin-top"
 			],
@@ -510,10 +514,6 @@
 			[
 				"try",
 				"try catch"
-			],
-			[
-				"inner",
-				"innerHTML	Element"
 			]
 		]
 	},
@@ -523,23 +523,7 @@
 			"file": "public/assets/css/main.css",
 			"settings":
 			{
-				"buffer_size": 689,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/config.php",
-			"settings":
-			{
-				"buffer_size": 1026,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/templates/default/forum_list.php",
-			"settings":
-			{
-				"buffer_size": 1704,
+				"buffer_size": 1852,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,7 +531,15 @@
 			"file": "app/Controller/ForumController.php",
 			"settings":
 			{
-				"buffer_size": 1266,
+				"buffer_size": 2523,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Manager/PostManager.php",
+			"settings":
+			{
+				"buffer_size": 322,
 				"line_ending": "Unix"
 			}
 		},
@@ -555,15 +547,31 @@
 			"file": "app/routes.php",
 			"settings":
 			{
-				"buffer_size": 545,
+				"buffer_size": 737,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/templates/default/forum_detail.php",
+			"file": "app/Manager/ReponseManager.php",
 			"settings":
 			{
-				"buffer_size": 741,
+				"buffer_size": 325,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/forum/forum_list.php",
+			"settings":
+			{
+				"buffer_size": 2542,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/css/forum.css",
+			"settings":
+			{
+				"buffer_size": 979,
 				"line_ending": "Unix"
 			}
 		}
@@ -618,16 +626,33 @@
 	"expanded_folders":
 	[
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W",
-		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app"
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Controller",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Manager",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/forum",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/partials",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/public",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/public/assets",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/public/assets/css"
 	],
 	"file_history":
 	[
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Manager/PostManager.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/default/forum_create.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/default/forum_detail.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/default/forum_list.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/partials/breadcrumb.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/partials/search_forum.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Controller/ForumController.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/routes.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/default/home.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/layout.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/config.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/partials/nav_forum.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/partials/nav.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/default/login.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Manager/UserManager.php",
-		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Manager/PostManager.php",
-		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/default/forum_list.php",
-		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/config.php",
 		"/Users/abellocabic/Sites/webbing_django/webbingenv/src/static/js/main.js",
 		"/Users/abellocabic/Sites/webbing_django/webbingenv/src/static/css/base.css",
 		"/Users/abellocabic/Sites/webbing_django/webbingenv/src/forum/admin.py",
@@ -740,16 +765,7 @@
 		"/Applications/MAMP/htdocs/WebforceWP-master",
 		"/Applications/MAMP/htdocs/43 - WordPress/wp-content/themes/webforce3/js/script.js",
 		"/Applications/MAMP/htdocs/43 - WordPress/wp-config.php",
-		"/Applications/MAMP/htdocs/43 - WordPress/wp-content/themes/webforce3/vendor/salaros/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php",
-		"/Applications/MAMP/htdocs/43 - WordPress/wp-content/themes/webforce3/single.php",
-		"/Applications/MAMP/htdocs/43 - WordPress/wp-content/themes/spacious-child/functions.php",
-		"/Applications/MAMP/htdocs/43 - WordPress/wp-content/themes/spacious-child/style.css",
-		"/Applications/MAMP/htdocs/43 - WordPress/wp-content/themes/spacious/functions.php",
-		"/Applications/MAMP/htdocs/39 - A&A/merci.php",
-		"/Applications/MAMP/htdocs/39 - A&A/mailerEx.php",
-		"/Applications/MAMP/htdocs/39 - A&A/readme.txt",
-		"/Applications/MAMP/htdocs/39 - PHP Admin Exo/css/general.css",
-		"/Applications/MAMP/htdocs/39 - PHP Admin Exo/sources/membres.fix"
+		"/Applications/MAMP/htdocs/43 - WordPress/wp-content/themes/webforce3/vendor/salaros/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php"
 	],
 	"find":
 	{
@@ -815,15 +831,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 689,
+						"buffer_size": 1852,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								537,
-								537
+								561,
+								561
 							]
 						],
 						"settings":
@@ -832,27 +848,56 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 265.0,
+						"translation.y": 271.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/config.php",
+					"file": "app/Controller/ForumController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1026,
+						"buffer_size": 2523,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								625,
+								625
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 491.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Manager/PostManager.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 322,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								321,
+								75
 							]
 						],
 						"settings":
@@ -863,53 +908,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/templates/default/forum_list.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1704,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								567,
-								567
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 239.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "app/Controller/ForumController.php",
+					"file": "app/routes.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1266,
+						"buffer_size": 737,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								407,
-								407
+								702,
+								713
 							]
 						],
 						"settings":
@@ -918,7 +934,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 194.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -926,60 +942,93 @@
 				},
 				{
 					"buffer": 4,
-					"file": "app/routes.php",
+					"file": "app/Manager/ReponseManager.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 545,
+						"buffer_size": 325,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								495,
-								495
+								94,
+								118
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "app/templates/default/forum_detail.php",
-					"semi_transient": false,
+					"file": "app/templates/forum/forum_list.php",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 741,
+						"buffer_size": 2542,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								574,
-								574
+								1622,
+								873
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 524.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "public/assets/css/forum.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 979,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								119,
+								119
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1002,11 +1051,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.769269785642,
 			1.0
 		],
 		"rows":
@@ -1066,7 +1122,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 197.0,
+	"side_bar_width": 270.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

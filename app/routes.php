@@ -12,7 +12,7 @@
 		['GET|POST', '/forum/create', 'Forum#post_create', 'forum_create'],
 		['GET', '/forum', 'Forum#post_list', 'forum'],
 		['GET', '/forum/[a:cat]', 'Forum#post_filter', 'filter'],
-		['GET', '/forum/detail/[:id]', 'Forum#post_detail', 'forum_detail'],
+		['GET|POST', '/forum/detail/[:id]', 'Forum#post_detail', 'forum_detail'],
 
 		// Admin
 		['GET|POST', '/admin', 'Admin#admin', 'admin'],

@@ -2,6 +2,14 @@
  *     CODE ADRIANA FORUM
  * ==========================*/
 
+.right {
+	text-align: right;
+}
+
+.border-right {
+	border-right: 1px solid #ccc;
+}
+
 /* top-bottom-margin-buffer */
 .tb-margin-buffer {
 	margin-top: 10px;
@@ -50,3 +58,21 @@ label[for=forum_search] {
 }
 
 /* -- forum_create -- */
+
+
+/* -- forum_detail -- */
+
+.forum_title {
+	margin: 5px auto;
+	padding: 5px;
+	border: 1px solid #eeeeee;
+	border-radius: 4px;
+	background-color: #eeeeee;
+}
+
+.a_reply {
+	display: block;
+	width: 150px;
+	margin: 10px auto;
+	text-align: center;
+}
