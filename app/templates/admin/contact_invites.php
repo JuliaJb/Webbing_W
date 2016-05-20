@@ -1,7 +1,7 @@
 <?php $this->layout('layout', ['title' => 'Forum']) ?>
 
 <?php $this->start('css') ?>
-
+    <link rel="stylesheet" href="<?= $this->assetUrl('/css/connect.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('/css/main.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('/css/forum.css') ?>">
 

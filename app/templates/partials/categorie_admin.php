@@ -1,5 +1,4 @@
 <div class="container">
-	<h2>Que souhaitez-vous voir ou faire ?</h2>
 	<ul class="nav nav-tabs">
 		<li role="presentation" class="active"><a href="/admin/statistiques">Statistiques</a></li>
 		<li role="presentation"><a href="/admin/contact_invites">Contacter mes invités</a></li>

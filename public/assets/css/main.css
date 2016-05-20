@@ -141,3 +141,39 @@ h1, h2, h3, h4, h5, h6 {
 .novisible {
   display: none;
 }
+
+.circle {
+  border: 1px solid #999999;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 16px;
+}
+
+.stat {
+  width: 30%;
+  text-align: center;
+  display: inline-block;
+}
+
+.stats {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#adminProfile input,
+#adminProfile textarea {
+  border-radius: 10px;
+  border: none;
+  background: #eee;
+  padding: 10Px;
+}
+
+
+
+
+
+

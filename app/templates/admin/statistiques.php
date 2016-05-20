@@ -46,16 +46,60 @@ $this->stop('nav');
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 
-                    
+                     
                 <div class="forum_list">
-                    <h2>Quelques Stats</h2>
-                    <p> <?= $nbInvites['count'] ?> invités </p>
-                    <p> <?= $yesGuestCountMaurice['count'] ?> ouis Maurice </p>
-                    <p> <?= $noGuestCountMaurice['count'] ?> nons Maurice </p>
-                    <p> <?= $yesGuestCountFrance['count'] ?> ouis France </p>
-                    <p> <?= $noGuestCountFrance['count'] ?> nons France </p>
-                </div> 
+                    <h2>Quelques Stats sur le mariage à l'île Maurice</h2>
+                    <div class="stats">
+                            <div class="stat">
+                                <div class="circle">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </div>  
+                                <p><?= $nbInvites['count'] ?> invités</p>
+                            </div>
 
+                            <div class="stat">
+                                <div class="circle">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </div>  
+                                <p><?= $yesGuestCountMaurice['count'] ?> Oui</p>
+                            </div>
+
+                            <div class="stat">
+                                <div class="circle">
+                                    <i class="fa fa-close" aria-hidden="true"></i>
+                                </div>  
+                                <p><?= $noGuestCountMaurice['count'] ?> Non</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="forum_list">
+                    <h2>Quelques Stats sur le mariage en France</h2>
+                    <div class="stats">
+                            <div class="stat">
+                                <div class="circle">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </div>  
+                                <p><?= $nbInvites['count'] ?> invités</p>
+                            </div>
+
+                            <div class="stat">
+                                <div class="circle">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </div>  
+                                <p><?= $yesGuestCountFrance['count'] ?> Oui</p>
+                            </div>
+
+                            <div class="stat">
+                                <div class="circle">
+                                    <i class="fa fa-close" aria-hidden="true"></i>
+                                </div>  
+                                <p><?= $noGuestCountFrance['count'] ?> Non</p>
+                            </div>
+
+                        </div>
+                    </div>
                     
                           
             </div>
