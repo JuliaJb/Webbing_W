@@ -63,6 +63,25 @@ $this->stop('nav');
 	</div> <!-- end of myCarousel -->
 
 	<div class="row">
+  		<div class="col-md-12 bloc_white">
+
+  			<div class="col-md-6">
+
+	  			<h2>Info1</h2>
+
+	        </div>
+
+	        
+	  		<div class="col-md-6">
+	  				
+	  			<h2>Info2</h2>
+
+	        </div>
+
+  		</div>
+	</div>
+
+	<div class="row">
   		<div class="col-md-12 bloc_grey">
 	        
   			<div class="col-md-4">
@@ -93,7 +112,7 @@ $this->stop('nav');
 	                <input type="radio" name="rsvpFr" value="1"> Oui
 	                <input type="radio" name="rsvpFr" value="0"> Non
 	                <br>
-	                <button name="btnCreateProfile" id="btnChangeId" class="btn btn_profile">Valider</button>
+	                <button id="btnChangeId" class="btn">Valider</button>
 	            </form>
 	        </div>
 
@@ -108,7 +127,7 @@ $this->stop('nav');
 	                <input type="radio" name="rsvpMa" value="1"> Oui
 	                <input type="radio" name="rsvpMa" value="0"> Non
 	                <br>
-	                <button name="btnCreateProfile" id="btnChangeId" class="btn btn_profile">Valider</button>
+	                <button id="btnChangeId" class="btn">Valider</button>
 	            </form>
 	        </div>
 

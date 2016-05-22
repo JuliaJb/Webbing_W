@@ -113,6 +113,8 @@ class LoginController extends Controller
 
 		$manager = new \Manager\UserManager();
 
+
+
 		if (isset($_POST['btnCreateProfile'])) 
 		{
 			$errors = [];
@@ -121,33 +123,33 @@ class LoginController extends Controller
 
 			if (empty($_POST['prenom'])) 
 			{
-				$errors['prenom'] = "Veuillez renseigner votre prénom";
+				$errors['prenom'] = "Veuillez renseigner votre prénom.";
 			}
 
 
 			if (empty($_POST['nom'])) 
 			{
-				$errors['nom'] = "Veuillez renseigner votre nom";
+				$errors['nom'] = "Veuillez renseigner votre nom.";
 			}
 
 			if (empty($_POST['email'])) 
 			{
-				$errors['email'] = "Veuillez renseigner votre email";
+				$errors['email'] = "Veuillez renseigner votre email.";
 			}
 
 			if (empty($_POST['password'])) 
 			{
-				$errors['password'] = "Veuillez renseigner votre mot de passe";
+				$errors['password'] = "Veuillez renseigner votre mot de passe.";
 			}
 
 			if (!isset($_POST['rsvpFr'])) 
 			{
-				$errors['rsvpFr'] = "Pouvez-vous nous indiquer votre venu. Vous pourrez modifier cette information par la suite";
+				$errors['rsvpFr'] = "Pouvez-vous nous indiquer votre venue. Vous pourrez modifier cette information par la suite.";
 			}
 
 			if (!isset($_POST['rsvpMa'])) 
 			{
-				$errors['rsvpMa'] = "Pouvez-vous nous indiquer votre venue. Vous pourrez modifier cette information par la suite";
+				$errors['rsvpMa'] = "Pouvez-vous nous indiquer votre venue. Vous pourrez modifier cette information par la suite.";
 			}
 
 			if (!isset($_POST['regime'])) 
@@ -173,7 +175,7 @@ class LoginController extends Controller
 			{
 				if (empty($_POST['enfants_name'])) 
 				{
-					$errors['enfants_name'] = "Veuillez renseigner les prénoms de votre(vos) enfant(s)";
+					$errors['enfants_name'] = "Veuillez renseigner les prénoms de votre(vos) enfant(s).";
 				}
 			}
 
@@ -221,7 +223,115 @@ class LoginController extends Controller
 
 	public function mon_profil()
 	{
-		$this->show('default/mon_profil');
+		$manager = new \Manager\UserManager();
+
+
+		$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
+
+
+		if (isset($_POST['btnChangeProfile'])) 
+		{
+			$errors = [];
+
+			// CONTROLE DES CHAMPS DU FORMULAIRE D'INSCRIPTION
+
+			if (empty($_POST['prenom'])) 
+			{
+				$errors['prenom'] = "Veuillez renseigner votre prénom.";
+			}
+
+
+			if (empty($_POST['nom'])) 
+			{
+				$errors['nom'] = "Veuillez renseigner votre nom.";
+			}
+
+			if (empty($_POST['email'])) 
+			{
+				$errors['email'] = "Veuillez renseigner votre email.";
+			}
+
+			if (empty($_POST['password'])) 
+			{
+				$errors['password'] = "Veuillez renseigner votre mot de passe.";
+			}
+
+			if (!isset($_POST['rsvpFr'])) 
+			{
+				$errors['rsvpFr'] = "Pouvez-vous nous indiquer votre venue.";
+			}
+
+			if (!isset($_POST['rsvpMa'])) 
+			{
+				$errors['rsvpMa'] = "Pouvez-vous nous indiquer votre venue.";
+			}
+
+			if (!isset($_POST['regime'])) 
+			{
+				$errors['regime'] = "Veuillez renseigner si vous avez un régime alimentaire spécifique ou non.";
+			}
+
+			if (isset($_POST['regime']) && $_POST['regime'] == "1") 
+			{
+				if (empty($_POST['aliment_specs'])) 
+				{
+					$errors['aliment_specs'] = "Veuillez renseigner vos restrictions alimentaires";
+				}
+			}
+
+
+			if (!isset($_POST['enfants'])) 
+			{
+				$errors['enfants'] = "Veuillez renseigner si vous venez accompagner d'enfant(s).";
+			}
+
+			if (isset($_POST['enfants']) && $_POST['enfants'] == "1") 
+			{
+				if (empty($_POST['enfants_name'])) 
+				{
+					$errors['enfants_name'] = "Veuillez renseigner les prénoms de votre(vos) enfant(s)";
+				}
+			}
+
+
+
+			if (empty($errors)) 
+			{
+				$lastnameLower = strtolower($_POST['nom']);
+				$firstnameLower = strtolower($_POST['prenom']);
+
+				$users = $manager->checkInscription($lastnameLower, $firstnameLower);
+
+				$data = [
+					'lastname' => $lastnameLower,
+					'firstname' => $firstnameLower,
+					'email' => $_POST['email'],
+					'password' => $_POST['password'],
+					'children' => $_POST['enfants'],
+					'diet' => $_POST['regime'],
+					'aliments' => $_POST['aliment_specs'],
+					'rsvpMa' => $_POST['rsvpMa'],
+					'rsvpFr' => $_POST['rsvpFr'],
+				];
+					
+				$result = $manager->update($data, $users['id']);
+
+
+
+				$this->redirectToRoute('home');
+			}
+			else
+			{
+
+				$this->show('default/mon_profil', ['errors' => $errors]);
+			}
+
+		}
+
+		// AFFICHAGE DE LA PAGE PROFIL QUOI QU'IL ARRIVE
+		
+		$this->show('default/mon_profil', ['profil' => $profil]);
+
 	}
 
 

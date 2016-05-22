@@ -19,6 +19,14 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Poiret One';
 }
 
+.visible {
+  display: block;
+}
+
+.novisible {
+  display: none;
+}
+
 .bloc_white {
 	text-align: center;
 	padding: 50px;
@@ -38,9 +46,9 @@ h1, h2, h3, h4, h5, h6 {
 
 
 	/* ************************************ //
-	//									    //
-	// 			 	   Photo		        //
-	//									    //
+	//									                    //
+	// 			 	         Photo		            //
+	//									                    //
 	// ************************************ */
 .errors {
   width: 80%;
@@ -134,14 +142,6 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-.visible {
-  display: block;
-}
-
-.novisible {
-  display: none;
-}
-
 .circle {
   border: 1px solid #999999;
   width: 50px;
@@ -172,8 +172,101 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10Px;
 }
 
+ /* ************************************ //
+  //                                      //
+  //              Mon profil              //
+  //                                      //
+  // ************************************ */
+
+
+.bloc_mon_profil {
+  margin: 10px auto;
+  padding: 20px;
+  border: 1px solid #eeeeee;
+  box-shadow: 2px 2px 2px #ccc;
+  color: #000;
+}
+
+.bloc_profil {
+  width: 100%;
+  margin: 30px auto; 
+  text-align: center;
+  border-radius: 15px;
+  background: rgba(172, 117, 114, 0.6);
+}
+
+
+#changeProfile {
+  color: #000;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.bloc_mon_profil input[type="text"], 
+.bloc_mon_profil input[type="email"], 
+.bloc_mon_profil input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  background: #fbe9e7;
+  color: #000;
+}
+
+.bloc_mon_profil input:focus {
+  outline: none;
+
+}
+
+.bloc_mon_profil input[type="password"] {
+  margin-bottom: 30px;
+}
+
+
+.bloc_mon_profil p {
+  font-size: 18px;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.bloc_mon_profil textarea {
+  border: none;
+  border-radius: 15px;
+  color: #000;
+  padding: 20px;
+  background: #fbe9e7;
+  width: 100%;
+}
 
 
 
+.bloc_mon_profil textarea[name="musique"] {
+  display: block;
+}
 
+.btn_profile {
+  background: rgba(96, 0, 1, 0.7);
+  margin: 30px 0;
+  width: 100%;
+  border-radius: 15px;
+  font-size: 20px;
+  color: #fff;
+}
+
+
+input[type=radio] {
+  margin: 4px 8px 10px;
+}
+
+.errorsProfil {
+  width: 100%;
+    padding: 15px;
+    background: rgba(251,233,231,0.3);
+    margin: 10px auto 0;
+    border-radius: 15px;
+    color: rgba(96, 0, 1, 1);
+    font-weight: bold;
+}
+
+.radius_top { 
+  border-bottom: 2px solid #fff;
+}
 

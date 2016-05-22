@@ -23,6 +23,7 @@
 		['GET|POST', '/admin/france', 'Admin#france', 'france'],
 		['GET|POST', '/admin/profil_invites', 'Admin#profil_invites', 'profil_invites'],
 		['GET|POST', '/admin/info_une', 'Admin#info_une', 'info_une'],
+		['GET|POST', '/admin/ajout_invite', 'Admin#ajout_invite', 'ajout_invite'],
 
 
 	);

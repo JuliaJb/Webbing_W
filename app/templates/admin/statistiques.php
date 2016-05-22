@@ -28,18 +28,7 @@ $this->stop('nav');
             <li class="active">Categorie</li>
         </ol>
 
-    <div class="container">
-        <div class="jumbotron">
-            <h2>Bienvenu sur l'admin de Marcus et Ginette</h2>
-            <a href="/forum/create" class="btn btn-default btn-lg new_post">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nouvel invité
-            </a>
-            <a href="/forum/create" class="btn btn-default btn-lg new_post">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Modification invité
-            </a>
-        </div>
-    </div>
-
+ 
 <?php include '../app/templates/partials/categorie_admin.php'; ?>
 
     <div class="container">

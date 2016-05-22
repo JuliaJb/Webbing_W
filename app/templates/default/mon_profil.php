@@ -23,13 +23,11 @@ $this->stop('nav');
 	<div class="container vertical_align">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              	<div class="bloc_profile">
+              	<div class="bloc_mon_profil">
 
-	                <h2 class="profile_head">VOTRE PROFIL</h2>
+	                <h2 class="mon_profil_head">VOTRE PROFIL</h2>
 	                
 	                <form id="changeProfile" method="POST">
-	                    
-	                    <p>Toutes les informations suivantes pourront être modifiées ultèrieurement.</p>
 	                  
 	                    <input class="radius_top" type="text" name="prenom" value="<?php echo $_SESSION["firstname"];?>" placeholder="Prénom">
 	                    
@@ -41,9 +39,9 @@ $this->stop('nav');
 		                    <p><?php if(isset($errors['nom'])) { echo $errors['nom'];} ?></p>
 		                </div>
 
-	                    <input class="radius_top" type="email" name="email" placeholder="Email *">
+	                    <input class="radius_top" type="email" name="email" placeholder="Email *" value="<?php if(isset($profil['email'])) { echo $profil['email'];} ?>">
 
-	                    <input class="radius_bottom" type="password" name="password" placeholder="Mot de Passe *">
+	                    <input class="radius_bottom" type="password" name="password" placeholder="Mot de Passe *" value="<?php if(isset($profil['password'])) { echo $profil['password'];} ?>">
 
 	                    <div class=<?php if ( isset($errors['password']) || isset($errors['email']) ) { echo "errorsProfil";} ?>>
 
@@ -53,16 +51,16 @@ $this->stop('nav');
 	           
 	                  
 	                    <p>Seriez vous présent le jour de notre mariage en France ? *</p>
-	                    <input type="radio" name="rsvpFr" value="1"> Oui
-	                    <input type="radio" name="rsvpFr" value="0"> Non
+	                    <input type="radio" name="rsvpFr" value="1" <?= (isset($profil['rsvpFr']) && $profil['rsvpFr'] == "1")? "checked": " " ?>> Oui
+                        <input type="radio" name="rsvpFr" value="0" <?= (isset($profil['rsvpFr']) && $profil['rsvpFr'] == "0")? "checked": " " ?>> Non
 
 	                    <div class=<?php if (isset($errors['rsvpFr'])) { echo "errorsProfil";} ?>>
 		                    <p><?php if(isset($errors['rsvpFr'])) { echo $errors['rsvpFr'];} ?></p>
 		                </div>
 
 	                    <p>Seriez vous présent le jour de notre mariage à l'ile Maurice ? *</p>
-	                    <input type="radio" name="rsvpMa" value="1"> Oui
-	                    <input type="radio" name="rsvpMa" value="0"> Non
+	                    <input type="radio" name="rsvpMa" value="1" <?= (isset($profil['rsvpMa']) && $profil['rsvpMa'] == "1")? "checked": " " ?>> Oui
+                        <input type="radio" name="rsvpMa" value="0" <?= (isset($profil['rsvpMa']) && $profil['rsvpMa'] == "0")? "checked": " " ?>> Non
 
 	                    <div class=<?php if (isset($errors['rsvpMa'])) { echo "errorsProfil";} ?>>
 		                    <p><?php if(isset($errors['rsvpMa'])) { echo $errors['rsvpMa'];} ?></p>
@@ -70,14 +68,14 @@ $this->stop('nav');
 	   
 	                  
 	                    <p>Avez-vous ou votre(vos) enfant(s), des allergies alimentaires ou un régime alimentaire spécifique ? *</p>
-	                    <input type="radio" name="regime" value="1"> Oui
-	                    <input type="radio" name="regime" value="0"> Non
+	                    <input type="radio" name="regime" value="1" <?= (isset($profil['diet']) && $profil['diet'] == "1")? "checked": " " ?>> Oui
+                        <input type="radio" name="regime" value="0" <?= (isset($profil['diet']) && $profil['diet'] == "0")? "checked": " " ?>> Non
 
 	                    <div class=<?php if (isset($errors['regime'])) { echo "errorsProfil";} ?>>
 		                    <p><?php if(isset($errors['regime'])) { echo $errors['regime'];} ?></p>
 		                </div>
 
-	                    <textarea name="aliment_specs" id="" cols="100" placeholder="Si oui, de quel type ?"></textarea>
+	                    <textarea name="aliment_specs" class="<?= (isset($profil['diet']) && $profil['diet'] == "1")? "visible": "novisible" ?>" cols="100" placeholder="Si oui, de quel type ?"><?= (isset($profil['aliments']))? $profil['aliments']:"" ?></textarea>
 
 	                    <div class=<?php if (isset($errors['aliment_specs'])) { echo "errorsProfil";} ?>>
 		                    <p><?php if(isset($errors['aliment_specs'])) { echo $errors['aliment_specs'];} ?></p>
@@ -85,14 +83,14 @@ $this->stop('nav');
 
 
 	                    <p>Venez-vous accompagné d'enfant(s) ? *</p>
-	                    <input type="radio" name="enfants" value="1"> Oui
-	                    <input type="radio" name="enfants" value="0"> Non
+	                    <input type="radio" name="enfants" value="1" <?= (isset($profil['children']) && $profil['children'] == "1")? "checked": " " ?>> Oui
+                        <input type="radio" name="enfants" value="0" <?= (isset($profil['children']) && $profil['children'] == "0")? "checked": " " ?>> Non
 
 	                    <div class=<?php if (isset($errors['enfants'])) { echo "errorsProfil";} ?>>
 		                    <p><?php if(isset($errors['enfants'])) { echo $errors['enfants'];} ?></p>
 		                </div>
 
-	                    <textarea name="enfants_name" cols="100" placeholder="Pouvez-vous nous indiquer son(leur) prénom ?"></textarea>
+	                    <textarea name="enfants_name" class="<?= (isset($profil['children']) && $profil['children'] == "1")? "visible": "novisible" ?>" cols="100" placeholder="Pouvez-vous nous indiquer son(leur) prénom ?"></textarea>
 
 	                    <div class=<?php if (isset($errors['enfants_name'])) { echo "errorsProfil";} ?>>
 		                    <p><?php if(isset($errors['enfants_name'])) { echo $errors['enfants_name'];} ?></p>
@@ -101,7 +99,7 @@ $this->stop('nav');
 	                    <p><span class="glyphicon glyphicon-headphones" aria-hidden="true"></span> Aidez-nous à faire notre playlist en nous disant ce que vous aimez :</p>
 	                    <textarea name="musique" cols="100" placeholder="Un artiste, un album, un titre, tout ce qui vous vient :)"></textarea>
 
-	                    <button name="btnCreateProfile" id="btnChangeId" class="btn btn_profile">Valider</button>
+	                    <button name="btnChangeProfile" id="btnChangeId" class="btn btn_profile">Valider</button>
 
 
 	                </form>

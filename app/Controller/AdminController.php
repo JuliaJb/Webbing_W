@@ -176,6 +176,10 @@ class AdminController extends Controller
 		$this->show('admin/profil_invites', ['invites' => $invites, 'isvisible' => $isvisible]);
 	}
 
+	public function ajout_invite() {
+
+		$this->show('admin/ajout_invite');
+	}
 
 
 	public function info_une()
