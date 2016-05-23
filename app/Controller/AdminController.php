@@ -10,36 +10,50 @@ class AdminController extends Controller
 
 	public function admin()
 	{	
-		$this->show('admin/admin');
-	}
 
-	public function statistiques()
-	{	
+
 		$manager = new \Manager\UserManager();
+
+		// STATISTIQUES
 		$nbInvites = $manager->guestCount();
 		$yesGuestCountMaurice = $manager->yesGuestCountMaurice();
 		$noGuestCountMaurice = $manager->noGuestCountMaurice();
 		$yesGuestCountFrance = $manager->yesGuestCountFrance();
 		$noGuestCountFrance = $manager->noGuestCountFrance();
+		// LISTE INVITE
+		$invites = $manager->findAll($orderBy = "1", $orderDir = "ASC");
+		// LISTE MAURICE
+		$invitesOuiMa = $manager->yesAnswerMaurice();
+		$invitesNonMa = $manager->noAnswerMaurice();
+		// LISTE FRANCE
+		$invitesOuiFr = $manager->yesAnswerFrance();
+		$invitesNonFr = $manager->noAnswerFrance();
+		// CONTACT INVITE
+		$emailMaurice = $manager->get_emails_maurice();
+		$emailFrance = $manager->get_emails_france();
+
+		$isvisible = "novisible";
 
 		
-		
-		$this->show('admin/statistiques', [
+		$this->show('admin/admin', [
 				'nbInvites' => $nbInvites,
 				'yesGuestCountMaurice' => $yesGuestCountMaurice,
 				'noGuestCountMaurice' => $noGuestCountMaurice,
 				'yesGuestCountFrance' => $yesGuestCountFrance,
-				'noGuestCountFrance' => $noGuestCountFrance
+				'noGuestCountFrance' => $noGuestCountFrance,
+				'invites' => $invites,
+				'invitesOuiMa' => $invitesOuiMa,
+				'invitesNonMa' => $invitesNonMa,
+				'invitesOuiFr' => $invitesOuiFr,
+				'invitesNonFr' => $invitesNonFr,
+				'isvisible' => $isvisible,
 			]);
-	}
 
-	public function contact_invites()
-	{	
 
-		$manager = new \Manager\UserManager();
-		$invites = $manager->findAll($orderBy = "1", $orderDir = "ASC");
-		$emailMaurice = $manager->get_emails_maurice();
-		$emailFrance = $manager->get_emails_france();
+
+
+		// ******** CONTACT INVITE **********
+
 
 		$listeEmailMa = "";
 		$listeEmailFr = "";
@@ -61,7 +75,7 @@ class AdminController extends Controller
 			{
 				$message = "No arguments Provided!";
 
-				$this->show('admin/contact_invites', ['message' => $message]);
+				$this->show('admin/admin', ['message' => $message]);
 			}
 			else
 			{
@@ -88,70 +102,35 @@ class AdminController extends Controller
 
 				$message = "Votre message a bien été envoyé :)";
 
-				$this->show('admin/contact_invites', ['message' => $message]);		
+				$this->show('admin/admin', ['message' => $message]);		
 			}	
 				
 
-			$this->show('admin/contact_invites', ['message' => $message]);
+			$this->show('admin/admin', ['message' => $message]);
 
 		}
 
+		// ******** FIN CONTACT INVITE **********
 
-
-
-		$this->show('admin/contact_invites');
-	}
-
-	public function liste_invites()
-	{	
-		$manager = new \Manager\UserManager();
-		$invites = $manager->findAll($orderBy = "1", $orderDir = "ASC");
-
-		$this->show('admin/liste_invites', ['invites' => $invites]);
-	}
-
-	public function maurice()
-	{	
-		$manager = new \Manager\UserManager();
-		$invitesOui = $manager->yesAnswerMaurice();
-		$invitesNon = $manager->noAnswerMaurice();
-
-		$this->show('admin/maurice', ['invitesOui' => $invitesOui, 'invitesNon' => $invitesNon]);
-	}
-
-	public function france()
-	{	
-		$manager = new \Manager\UserManager();
-		$invitesOui = $manager->yesAnswerFrance();
-		$invitesNon = $manager->noAnswerFrance();
-
-		$this->show('admin/france', ['invitesOui' => $invitesOui, 'invitesNon' => $invitesNon]);
 	}
 
 	public function profil_invites()
 	{	
 		$manager = new \Manager\UserManager();
 		$invites = $manager->findAll($orderBy = "1", $orderDir = "ASC");
-
 		$isvisible = "novisible";
 		$firstname = "";
 		$lastname = "";
-
 		// AU CLIC SUR LE BOUTON OK
 		if (isset($_POST['btnAdminNames'])) {
-
 			$firstname = $_POST['firstname'];
 			$lastname = $_POST['lastname'];
-
 			$isvisible = "visible";
 				
 			$profil = $manager->findGuestByNames($_POST['firstname'], $_POST['lastname']);
 				
 			$this->show('admin/profil_invites', ['invites' => $invites, 'profil' => $profil, 'isvisible' => $isvisible]);	
-
-
 		}
-
 		// AU CLIC SUR LE BOUTON ENREGISTRER MODIFICATIONS
 		if (isset($_POST['btnAdminProfile'])) {
 			
@@ -166,26 +145,12 @@ class AdminController extends Controller
 				];
 					
 			$result = $manager->update($data, $_POST['id']);
-
 			$message = "Le profil a bien été modifié !";
-
 			$this->show('admin/profil_invites', ['invites' => $invites, 'isvisible' => $isvisible, 'message' => $message]);
-
 		}
-
 		$this->show('admin/profil_invites', ['invites' => $invites, 'isvisible' => $isvisible]);
 	}
 
-	public function ajout_invite() {
-
-		$this->show('admin/ajout_invite');
-	}
-
-
-	public function info_une()
-	{	
-		$this->show('admin/info_une');
-	}
 	
 
 }

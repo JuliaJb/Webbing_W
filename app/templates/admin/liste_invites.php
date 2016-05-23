@@ -68,4 +68,10 @@ $this->stop('nav');
 
 <?php $this->stop('main') ?>
 
+<?php $this->start('script') ?>
 
+
+    <script src="<?= $this->assetUrl('/js/admin.js') ?>"></script>
+
+
+<?php $this->stop('script') ?>

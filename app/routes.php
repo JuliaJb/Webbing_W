@@ -16,14 +16,10 @@
 
 		// Admin
 		['GET|POST', '/admin', 'Admin#admin', 'admin'],
-		['GET|POST', '/admin/statistiques', 'Admin#statistiques', 'statistiques'],
-		['GET|POST', '/admin/contact_invites', 'Admin#contact_invites', 'contact_invites'],
-		['GET|POST', '/admin/liste_invites', 'Admin#liste_invites', 'liste_invites'],
-		['GET|POST', '/admin/maurice', 'Admin#maurice', 'maurice'],
-		['GET|POST', '/admin/france', 'Admin#france', 'france'],
 		['GET|POST', '/admin/profil_invites', 'Admin#profil_invites', 'profil_invites'],
-		['GET|POST', '/admin/info_une', 'Admin#info_une', 'info_une'],
-		['GET|POST', '/admin/ajout_invite', 'Admin#ajout_invite', 'ajout_invite'],
+
+		// plan de table
+		['GET|POST', '/plan', 'Plan#plan', 'plan'],
 
 
 	);

@@ -8,6 +8,8 @@
 
 	<link rel="stylesheet" href="<?= $this->assetUrl('/css/vendor/bootstrap.min.css') ?>">
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css" />
+
 	<?= $this->section('css') ?>
 
 
@@ -30,6 +32,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/jquery.chained/0.9.9/jquery.chained.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
     <?= $this->section('script') ?>
 

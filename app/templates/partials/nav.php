@@ -36,7 +36,8 @@
               <li><a href="/mon_profil">Mon profil</a></li>
               <li><a href="/deconnexion">Deconnexion</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="/admin/statistiques">Admin</a></li>
+              <li><a href="/admin">Admin</a></li>
+              <li><a href="/plan">Plan de table</a></li>
             </ul>
           </li>
         </ul>
