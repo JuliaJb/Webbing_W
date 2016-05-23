@@ -7,10 +7,56 @@ use \W\Controller\Controller;
 class ForumController extends Controller
 {
 
+	//Get the users role:
+	public function get_user_role()
+	{
+		
+		$roles_manager = new \Manager\Roles_UserManager();
+
+		$result_r = $roles_manager->get_user_roles();
+
+		$roles = array();
+		foreach ($result_r as $key => $value) 
+		{
+			switch ($value['id_role']) 
+			{
+			 	case 1:
+			 		$roles[] = "Admin";
+			 		break;
+			 	case 2:
+			 		$roles[] = "France";
+			 		break;
+		 		case 3:
+			 		$roles[] = "Maurice";
+			 		break;
+			 	case 4:
+			 		$roles[] = "Bachelor";
+			 		break;
+			 	case 5:
+			 		$roles[] = "Bachelorette";
+			 		break;
+			 	case 6:
+			 		$roles[] = "Futur";
+			 		break;
+			 	default:
+			 		$roles[] = "None";
+			 		break;
+			}
+		}
+
+		$_SESSION['roles'] = $roles;
+
+		//$this->show('default/test', ['roles' => $roles]);
+
+	}
+
+
 	
 	//List all Forum Topics 
 	public function post_list()
 	{
+
+		$this->get_user_role(); 
 
 		$manager = new \Manager\PostManager();
 

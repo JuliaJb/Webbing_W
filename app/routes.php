@@ -24,5 +24,7 @@
 		['GET|POST', '/admin/profil_invites', 'Admin#profil_invites', 'profil_invites'],
 		['GET|POST', '/admin/info_une', 'Admin#info_une', 'info_une'],
 
+		// Test
+		['GET|POST', '/test', 'Forum#get_user_role', 'test'],
 
 	);

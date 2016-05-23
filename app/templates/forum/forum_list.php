@@ -21,6 +21,8 @@ $this->stop('nav');
 
 <?php $this->start('main') ?>
 
+	
+	
 	<div id="forum_searchbar">
 		<form action="" method="POST">
 			<label for="forum_search"><h3>Quel sujet cherchez-vous?</h3></label>
@@ -37,6 +39,19 @@ $this->stop('nav');
 	
 
 	<?php  include '../app/templates/partials/nav_forum.php'; ?>
+
+	<div class="container">
+		<h2>Les Catégories</h2>
+			<ul class="nav nav-tabs">
+			<?php foreach ($_SESSION['roles'] as $key => $value) : ?>
+				<?php if ($value == 'Admin')
+				{
+					continue;
+				}?>
+				<li role="presentation"><a href="/forum/<?= $value ?>"><?= $value ?></a></li>
+			<?php endforeach ; ?>
+			</ul>
+	</div>
 
 
 	<?php if (!empty($result)) : ?>

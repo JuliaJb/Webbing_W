@@ -14,13 +14,6 @@ class DefaultController extends Controller
 		$this->show('default/home');
 	}
 
-	public function forum()
-	{
-		
-		echo "C'est la forum";
-	}
-
-
 	public function info_france()
 	{
 		
@@ -40,7 +33,5 @@ class DefaultController extends Controller
 		$this->redirectToRoute('login');
 
 	}
-
-
 
 }
