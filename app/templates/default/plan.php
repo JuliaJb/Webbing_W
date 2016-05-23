@@ -15,6 +15,7 @@ $this->start('nav');
 
 $this->stop('nav');
 
+
 ?>
 
 
@@ -30,26 +31,17 @@ $this->stop('nav');
 
 	<div class="col-md-8">
 
-		<section class="table" id="tableOne">
-			<article class="droppable"><p>1</p></article>
-			<article class="droppable"><p>2</p></article>
-			<article class="droppable"><p>3</p></article>
-			<article class="droppable"><p>4</p></article>
-			<article class="droppable"><p>5</p></article>
-			<article class="droppable"><p>6</p></article>
-			<article class="droppable"><p>7</p></article>
-			<article class="droppable"><p>8</p></article>
-		</section>
-
 		<section class="table">
-			<article class="droppable"><p>9</p></article>
-			<article class="droppable"><p>10</p></article>
-			<article class="droppable"><p>11</p></article>
-			<article class="droppable"><p>12</p></article>
-			<article class="droppable"><p>13</p></article>
-			<article class="droppable"><p>14</p></article>
-			<article class="droppable"><p>15</p></article>
-			<article class="droppable"><p>16</p></article>
+
+			<article class="droppable"><span class="placeNumber">1</span></article>
+			<article class="droppable"><span class="placeNumber">2</span></article>
+			<article class="droppable"><span class="placeNumber">3</span></article>
+			<article class="droppable"><span class="placeNumber">4</span></article>
+			<article class="droppable"><span class="placeNumber">5</span></article>
+			<article class="droppable"><span class="placeNumber">6</span></article>
+			<article class="droppable"><span class="placeNumber">7</span></article>
+			<article class="droppable"><span class="placeNumber">8</span></article>
+			
 		</section>
 
 	
