@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	var planTable = [];
 
-	function addNewGest(nom, prenom, place){
+	function addNewGuest(nom, prenom){
 		$('#guestList').append(''+
 			'<article class="draggable">'+
 			'<p class="nom">' + nom + '<p>'+
@@ -16,15 +16,44 @@ $(document).ready(function(){
 	$( ".droppable" ).droppable({
 		drop: function( event, ui ) {
 
-		console.log($('.ui-draggable-dragging').text());
-		console.log( $(this).find('.placeNumber').text() );
 
-		var userName = $('.ui-draggable-dragging').text();
-		var userPlace = $(this).find('.placeNumber').text();
 
-		planTable[userPlace].guest = userName;
-		console.log(planTable);
-		
+			// console.log($('.ui-draggable-dragging .nom').text());
+			// console.log( $(this).find('.placeNumber').text() );
+
+			var userName = $('.ui-draggable-dragging .nom').text();
+			var userFirstName = $('.ui-draggable-dragging .prenom').text();
+			var userPlace = $(this).find('.placeNumber').text();
+
+
+
+			count = 0;
+			stock = 0;
+
+			for (var i=0; i<planTable.length; i++) { 
+		   		if(count = 1) {
+		   			stock = i;
+		   		}
+			   	if (planTable[i].guest == userName+" "+userFirstName) {
+			   		console.log("c'est bon, index :"+i);
+			   		count++;
+
+			   		if(count > 1) {
+			   			planTable[stock].guest = 0;
+			   		}
+
+			   	}
+			   	else {
+					console.log('pas bon');
+				}
+			   
+			}
+
+			planTable[userPlace].guest = userName+" "+userFirstName;
+			console.log(planTable);
+			
+			console.log(count);
+
 		}
 	});
 
@@ -35,11 +64,16 @@ $(document).ready(function(){
 		dataType: 'json',
 
 		success: function(data){
+
+			for (var j = 0; j <= 16; j++) {
+
+				planTable.push({place:j, guest:0});
+
+			}
+
 			for(var i=0; i<data.length; i++){
 	
-				addNewGest(data[i].lastname, data[i].firstname);
-
-				planTable.push({place:i, guest:0});
+				addNewGuest(data[i].lastname, data[i].firstname);
 			}
 		},
 		error: function(){
@@ -51,22 +85,22 @@ $(document).ready(function(){
 	})
 
 
-	// $.ajax({
-	// 	url:'app/templates/default/plan.php',
-	// 	type:'post',
-	// 	data:{ json: "hello" },
+	$.ajax({
+		url:'plan',
+		type:'post',
+		data:{ json: "planTable" },
 
-	// 	success:function(data){
-	// 	//réponse du serveur
-	// 	},
-	// 	error: function(){
-	// 		console.log('Bad Request...');
-	// 	},
-	// 	complete: function(){
-	// 		console.log('complete');
-	// 	}
+		success:function(data){
+		//réponse du serveur
+		},
+		error: function(){
+			console.log('Bad Request...');
+		},
+		complete: function(){
+			console.log('complete');
+		}
 	
-	// });
+	});
 
 
 

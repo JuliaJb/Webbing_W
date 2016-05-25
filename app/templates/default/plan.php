@@ -16,6 +16,11 @@ $this->start('nav');
 $this->stop('nav');
 
 
+// $json = $_POST['json'];
+
+// var_dump($json);
+
+
 ?>
 
 
@@ -41,6 +46,19 @@ $this->stop('nav');
 			<article class="droppable"><span class="placeNumber">6</span></article>
 			<article class="droppable"><span class="placeNumber">7</span></article>
 			<article class="droppable"><span class="placeNumber">8</span></article>
+			
+		</section>
+
+		<section class="table">
+
+			<article class="droppable"><span class="placeNumber">9</span></article>
+			<article class="droppable"><span class="placeNumber">10</span></article>
+			<article class="droppable"><span class="placeNumber">11</span></article>
+			<article class="droppable"><span class="placeNumber">12</span></article>
+			<article class="droppable"><span class="placeNumber">13</span></article>
+			<article class="droppable"><span class="placeNumber">14</span></article>
+			<article class="droppable"><span class="placeNumber">15</span></article>
+			<article class="droppable"><span class="placeNumber">16</span></article>
 			
 		</section>
 
