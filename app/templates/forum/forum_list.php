@@ -49,7 +49,6 @@ $this->stop('nav');
 			<li role="presentation"><a href="/forum/maurice">Maurice</a></li>
 			<li role="presentation"><a href="/forum/bachelorette">Bachelorette</a></li>
 			<li role="presentation"><a href="/forum/bachelor">Bachelor</a></li>
-			<li role="presentation"><a href="/forum/bachelor">IT WORKS!!</a></li>
 		</ul>
 	<?php else : ?>
 		<ul class="nav nav-tabs">

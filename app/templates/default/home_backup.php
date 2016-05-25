@@ -62,75 +62,6 @@ $this->stop('nav');
 
 	</div> <!-- end of myCarousel -->
 
-
-	<!-- Different Displays Depending on user's role -->
-
-	<?php foreach ($_SESSION['roles'] as $key => $value) : ?>
-
-		<?php if ($value == "France") : ?>
-			<div class="row">
-				<div class="col-md-12 bloc_grey">
-					<h2>Mariage en France</h2>
-					<div class="col-md-6">
-			  			<h3>Mariage Civil à Saint Germain En Laye</h3>
-				  		<p>24 Juin 2017</p>
-			        </div>
-			        <div class="col-md-6">
-			  			<form method="POST">
-			                <p>Seriez vous présent le jour de notre mariage en France ? *</p>
-			                <input type="radio" name="rsvpFr" value="1"> Oui
-			                <input type="radio" name="rsvpFr" value="0"> Non
-			                <br>
-			                <button id="btnChangeId" class="btn">Valider</button>
-			            </form>
-			        </div>		
-				</div>
-			</div>			
-
-		<?php endif ?>
-
-		<?php if ($value == "Maurice") : ?>
-			<div class="container">
-				<div class="row">
-						<h2>Maraige à L'Île Maurice</h2>
-						<div class="col-md-6">
-				  			<h3>Mariage Religieux à L'île Maurice</h3>
-					  		<p>28 Octobre 2017</p>
-				        </div>
-						<div class="col-md-6">
-				  			<form method="POST">
-				                <p>Seriez vous présent le jour de notre mariage à l'ile Maurice ? *</p>
-				                <input type="radio" name="rsvpMa" value="1"> Oui
-				                <input type="radio" name="rsvpMa" value="0"> Non
-				                <br>
-				                <button id="btnChangeId" class="btn">Valider</button>
-				            </form>
-				        </div>
-				</div>
-			</div>
-		<?php endif ?>
-
-		<?php if ($value == "Bachelor") : ?>
-			<div class="container">
-				<div class="row">
-						<h2>Infos sur Bachelor</h2>
-						<div class="col-md-6">
-				  			<h3>L'enterrement de vie de jeune garçon aura lieu</h3>
-					  		<p>26 Octobre 2017</p>
-				        </div>
-						<div class="col-md-6">
-				  			<h3>More information about the bachelors party</h3>
-				  			<p>More here</p>
-				        </div>
-				</div>
-			</div>
-		<?php endif ?>
-
-	<?php endforeach ?>
-
-
-
-
 	<div class="row">
   		<div class="col-md-12 bloc_white">
 
@@ -150,7 +81,58 @@ $this->stop('nav');
   		</div>
 	</div>
 
+	<div class="row">
+  		<div class="col-md-12 bloc_grey">
+	        
+  			<div class="col-md-4">
+	  			<h3>Mariage Civil à Saint Germain En Laye</h3>
+		  		<p>24 Juin 2017</p>
+	        </div>
 
+	        <div class="col-md-4">
+	  			<img src="/assets/img/save_the_date.png" alt="RSVP">
+	  		</div>
+
+	  		<div class="col-md-4">
+	  			<h3>Mariage Religieux à L'île Maurice</h3>
+		  		<p>28 Octobre 2017</p>
+	        </div>
+
+  		</div>
+	</div>
+	
+	<div class="row">
+  		<div class="col-md-12 bloc_white">
+
+  			<div class="col-md-4">
+
+	  			<form method="POST">
+
+	                <p>Seriez vous présent le jour de notre mariage en France ? *</p>
+	                <input type="radio" name="rsvpFr" value="1"> Oui
+	                <input type="radio" name="rsvpFr" value="0"> Non
+	                <br>
+	                <button id="btnChangeId" class="btn">Valider</button>
+	            </form>
+	        </div>
+
+	        <div class="col-md-4">
+	  			<img src="/assets/img/rsvp.png" alt="RSVP" width="200px">
+	  		</div>
+
+	  		<div class="col-md-4">
+	  			<form method="POST">
+
+	                <p>Seriez vous présent le jour de notre mariage à l'ile Maurice ? *</p>
+	                <input type="radio" name="rsvpMa" value="1"> Oui
+	                <input type="radio" name="rsvpMa" value="0"> Non
+	                <br>
+	                <button id="btnChangeId" class="btn">Valider</button>
+	            </form>
+	        </div>
+
+  		</div>
+	</div>
 
 
 
