@@ -6,11 +6,11 @@ use \W\Controller\Controller;
 
 class ForumController extends Controller
 {
-
 	
 	//List all Forum Topics 
 	public function post_list()
 	{
+		$this->get_user_role(); 
 
 		$manager = new \Manager\PostManager();
 
@@ -25,7 +25,7 @@ class ForumController extends Controller
 	{
 		$manager = new \Manager\PostManager();
 
-		$post = $manager->find($id);
+		$post = $manager->get_post_and_author($id);
 
 
 		//Afficher toutes les réponses : 
@@ -112,7 +112,7 @@ class ForumController extends Controller
 
 				$manager->insert($data, $stripTags = True);
 
-				$this->redirectToRoute('forum');
+				$this->redirectToRoute('filter', ['cat' => $_POST['inp_category']]);
 			}
 
 		}

@@ -23,25 +23,21 @@ $this->stop('nav');
 
 	<?php include '../app/templates/partials/search_forum.php'; 
 		  include '../app/templates/partials/breadcrumb.php';
-	?>
-
-
-	
-	
+	?>	
 	
 	<div class="container">
 		<div class="col-lg-10 forum_list">
 
 			<div class="forum_title">
-				<h1><?= $post['titre'] ?></h1>
+				<h1><?= $post[0]['titre'] ?></h1>
 			</div>
 			<div class="row">
 				<div class="col-lg-7 col-md-7 border-right">
-					<p> <?= $post['message'] ?> </p>
+					<p> <?= $post[0]['message'] ?> </p>
 				</div>
-				<div class="col-lg-3 col-md-3">
-					<p>Message publié par : Prenom NOM
-					<br>Le : <?= $post['date_publication'] ?> </p>
+				<div class="col-lg-5 col-md-5">
+					<p>Message publié par : <?= $post[0]['firstname']." ".$post[0]['lastname'] ?></p> 
+					<p>Le : <?= $post[0]['date_publication'] ?> </p>
 				</div>
 			</div>
 			

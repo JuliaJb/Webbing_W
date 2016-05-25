@@ -66,11 +66,11 @@ $this->stop('nav');
 
 						<label for="sel_category">Catégorie</label>
 	                    <select class="form-control" name="inp_category" id="sel_category">
-						  <option value="France">France</option>
-						  <option value="Maurice">Maurice</option>
-						  <option value="Bachelor">Bachelor</option>
-						  <option value="Bachelorette">Bachelorette</option>
-						  <option value="Surprise">Surprise</option>
+						  <option value="france">France</option>
+						  <option value="maurice">Maurice</option>
+						  <option value="bachelor">Bachelor</option>
+						  <option value="bachelorette">Bachelorette</option>
+						  <option value="surprise">Surprise</option>
 						</select>
 
 

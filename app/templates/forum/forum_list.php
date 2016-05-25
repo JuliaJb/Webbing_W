@@ -21,6 +21,8 @@ $this->stop('nav');
 
 <?php $this->start('main') ?>
 
+	
+	
 	<div id="forum_searchbar">
 		<form action="" method="POST">
 			<label for="forum_search"><h3>Quel sujet cherchez-vous?</h3></label>
@@ -38,6 +40,26 @@ $this->stop('nav');
 
 	<?php  include '../app/templates/partials/nav_forum.php'; ?>
 
+<div class="container">
+	<h2>Les Catégories</h2>
+	<?php $key = array_search('Admin', $_SESSION['roles']) ?>
+	<?php if($key) : ?>
+		<ul class="nav nav-tabs">
+			<li role="presentation"><a href="/forum/france">France</a></li>
+			<li role="presentation"><a href="/forum/maurice">Maurice</a></li>
+			<li role="presentation"><a href="/forum/bachelorette">Bachelorette</a></li>
+			<li role="presentation"><a href="/forum/bachelor">Bachelor</a></li>
+			<li role="presentation"><a href="/forum/bachelor">IT WORKS!!</a></li>
+		</ul>
+	<?php else : ?>
+		<ul class="nav nav-tabs">
+		<?php foreach ($_SESSION['roles'] as $key => $value) : ?>
+			<li role="presentation"><a href="/forum/<?= $value ?>"><?= $value ?></a></li>		
+		<?php endforeach ; ?>
+		</ul>
+	<?php endif ?>
+</div>
+
 
 	<?php if (!empty($result)) : ?>
 	<div class="container">
@@ -50,7 +72,7 @@ $this->stop('nav');
 							<p> <?= $value['titre'] ?> </p>
 							<p> <?= $value['message'] ?> </p>
 							<p> <?= $value['date_publication'] ?> </p>
-							<p> <?= $value['category'] ?> </p>
+							<p> <strong>Categorie : </strong> <?= $value['category'] ?> </p>
 		              	</div> 
 
 					<?php endforeach ; ?>
@@ -69,10 +91,9 @@ $this->stop('nav');
 					<?php foreach ($filtered as $key => $value) : ?>
 						<div class="forum_list">
 							<a href="/forum/detail/<?= $value['id']?>"><h2 class="profile_head"> <?= $value['titre'] ?> </h2></a>
-							<p> <?= $value['titre'] ?> </p>
 							<p> <?= $value['message'] ?> </p>
 							<p> <?= $value['date_publication'] ?> </p>
-							<p> <?= $value['category'] ?> </p>
+							<p> <strong>Categorie : </strong> <?= $value['category'] ?> </p>
 		              	</div>
 
 					<?php endforeach ; ?>

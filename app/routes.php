@@ -9,6 +9,8 @@
 		['GET', '/deconnexion', 'Default#deconnexion', 'deconnexion'],
 		['GET', '/info_maurice', 'Default#info_maurice', 'info_maurice'],
 		['GET', '/info_france', 'Default#info_france', 'info_france'],
+		
+		//Forum
 		['GET|POST', '/forum/create', 'Forum#post_create', 'forum_create'],
 		['GET', '/forum', 'Forum#post_list', 'forum'],
 		['GET', '/forum/[a:cat]', 'Forum#post_filter', 'filter'],
@@ -21,5 +23,7 @@
 		// plan de table
 		['GET|POST', '/plan', 'Plan#plan', 'plan'],
 
+		// Test
+		['GET|POST', '/test', 'Test#test', 'test'],
 
 	);
