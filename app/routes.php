@@ -9,6 +9,8 @@
 		['GET', '/deconnexion', 'Default#deconnexion', 'deconnexion'],
 		['GET', '/info_maurice', 'Default#info_maurice', 'info_maurice'],
 		['GET', '/info_france', 'Default#info_france', 'info_france'],
+		
+		//Forum
 		['GET|POST', '/forum/create', 'Forum#post_create', 'forum_create'],
 		['GET', '/forum', 'Forum#post_list', 'forum'],
 		['GET', '/forum/[a:cat]', 'Forum#post_filter', 'filter'],
@@ -25,6 +27,6 @@
 		['GET|POST', '/admin/info_une', 'Admin#info_une', 'info_une'],
 
 		// Test
-		['GET|POST', '/test', 'Forum#get_user_role', 'test'],
+		['GET|POST', '/test', 'Test#test', 'test'],
 
 	);

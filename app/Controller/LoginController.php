@@ -35,6 +35,7 @@ class LoginController extends Controller
 
 			$users = $manager->checkInscription($lastnameLower, $firstnameLower);
 
+
 			if ( !empty($_POST['prenom']) && !empty($_POST['nom']) ) 
 			{
 				if (!$users) 
@@ -43,8 +44,16 @@ class LoginController extends Controller
 				}
 				else if($users) 
 				{
+					
 					$_SESSION["lastname"] = $_POST['nom'];
 					$_SESSION["firstname"] = $_POST['prenom'];
+
+					//Insertion Adriana, recupération ID
+					$rid = $_SESSION['id'];
+					$roles = $manager->get_user_roles($rid);
+
+					$_SESSION["roles"] = $roles;
+				
 
 					$this->redirectToRoute('profil');
 
@@ -89,6 +98,12 @@ class LoginController extends Controller
 					$_SESSION["lastname"] = $user['lastname'];
 					$_SESSION["firstname"] = $user['firstname'];
 					$_SESSION["id"] = $user['id'];
+
+					//Insertion Adriana, recupération ID
+					$rid = $_SESSION['id'];
+					$roles = $manager->get_user_roles($rid);
+
+					$_SESSION["roles"] = $roles;
 
 
 					$this->redirectToRoute('home');

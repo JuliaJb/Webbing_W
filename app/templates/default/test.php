@@ -21,15 +21,19 @@ $this->stop('nav');
 <?php $this->start('main') ?>
 
 
-<h1>Hello</h1>
+<h1>This is test</h1>
 
+<h2>This is _SESSION</h2>
 <pre>
 	<?php print_r($_SESSION) ?>
 </pre>
 
+
+<h2>This is roles</h2>
 <pre>
 	<?php print_r($roles) ?>
 </pre>
+
 
 
 
