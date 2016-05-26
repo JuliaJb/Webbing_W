@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 	$( ".droppable" ).droppable({
 		drop: function( event, ui ) {
-
+			// $( this ).html( "Dropped!" );
 
 
 			// console.log($('.ui-draggable-dragging .nom').text());
@@ -36,7 +36,7 @@ $(document).ready(function(){
 		   			stock = i;
 		   		}
 			   	if (planTable[i].guestL == userName && planTable[i].guestF == userFirstName) {
-			   		console.log("c'est bon, index :"+i);
+		
 			   		count++;
 
 			   		if(count > 1) {
@@ -45,9 +45,7 @@ $(document).ready(function(){
 			   		}
 
 			   	}
-			   	else {
-					console.log('pas bon');
-				}
+
 			   
 			}
 

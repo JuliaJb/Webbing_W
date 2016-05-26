@@ -239,7 +239,6 @@ class LoginController extends Controller
 	public function mon_profil()
 	{
 		$manager = new \Manager\UserManager();
-		$children = new \Manager\ChildManager();
 
 
 		$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
