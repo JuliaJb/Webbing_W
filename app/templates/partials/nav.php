@@ -34,7 +34,7 @@
           </li>
           
           <!-- If user invited to France -->
-          <?php elseif ($value == 'France') : ?>
+          <?php elseif ($value == 'France' && $value != 'Maurice') : ?>
             <li><a href="/info_france">Infos</a></li>
           </ul>
           
