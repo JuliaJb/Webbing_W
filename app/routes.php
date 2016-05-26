@@ -12,9 +12,13 @@
 		
 		//Forum
 		['GET|POST', '/forum/create', 'Forum#post_create', 'forum_create'],
-		['GET', '/forum', 'Forum#post_list', 'forum'],
+		['GET', '/forum/admin', 'Forum#post_list', 'forum'],
 		['GET', '/forum/[a:cat]', 'Forum#post_filter', 'filter'],
 		['GET|POST', '/forum/detail/[:id]', 'Forum#post_detail', 'forum_detail'],
+		['GET|POST', '/forum/update/[:id]', 'Forum#post_update', 'forum_update'],
+		['GET|POST', '/forum/delete/[:id]', 'Forum#post_delete', 'forum_delete'],
+
+
 
 		// Admin
 		['GET|POST', '/admin', 'Admin#admin', 'admin'],

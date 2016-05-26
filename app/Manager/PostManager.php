@@ -4,10 +4,11 @@ namespace Manager;
 
 class PostManager extends \W\Manager\Manager
 {
+	//Get a set of posts filtered by Category
 	public function get_post_by_filter($cat)
 	{
 
-		$sql = "SELECT * FROM " . $this->table . " WHERE category like :category";
+		$sql = "SELECT U.firstname, U.lastname, P.* FROM users AS u, posts AS P WHERE P.category like :category AND P.id_user = U.id";
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(":category", $cat);
 		$sth->execute();
@@ -15,9 +16,10 @@ class PostManager extends \W\Manager\Manager
 		return $sth->fetchAll();
 	}
 
+	//Get the post and author of a single post
 	public function get_post_and_author($id)
 	{
-		$sql = "SELECT U.firstname, U.lastname, P.* FROM users AS u, posts AS P WHERE P.id_user = 2 AND P.id_user = U.id";
+		$sql = "SELECT U.firstname, U.lastname, P.* FROM users AS u, posts AS P WHERE P.id = :id AND P.id_user = U.id";
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(":id", $id);
 		$sth->execute();

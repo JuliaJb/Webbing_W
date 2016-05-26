@@ -6,3 +6,24 @@
 			</a>
 		</div>
 	</div>
+
+	<!-- Forum Nav depending on Roles -->
+	<div class="container">
+		<h2>Les Catégories</h2>
+		<?php $key = array_search('Admin', $_SESSION['roles']) ?>
+		<?php if($key) : ?>
+			<ul class="nav nav-tabs">
+				<li role="presentation"><a href="/forum/france">France</a></li>
+				<li role="presentation"><a href="/forum/maurice">Maurice</a></li>
+				<li role="presentation"><a href="/forum/bachelorette">Bachelorette</a></li>
+				<li role="presentation"><a href="/forum/bachelor">Bachelor</a></li>
+			</ul>
+		<?php else : ?>
+			<ul class="nav nav-tabs">
+				<li role="presentation"><a href="/forum/surprise">Surprise</a></li>
+			<?php foreach ($_SESSION['roles'] as $key => $value) : ?>
+				<li role="presentation"><a href="/forum/<?= $value ?>"><?= $value ?></a></li>		
+			<?php endforeach ; ?>
+			</ul>
+		<?php endif ?>
+	</div>

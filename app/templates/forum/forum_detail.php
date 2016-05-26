@@ -46,26 +46,30 @@ $this->stop('nav');
 		</div>		
 	</div>
 
-
-
-	<?php if (!empty($reponses)) : ?>         	
-		<?php foreach ($reponses as $key => $value) : ?>
-		<div class="container">
-			<div class="col-lg-10 forum_list">
-				<div class="row">
-					<div class="col-lg-7 col-md-7 border-right">
-						<p><?= $value['message'] ?></p>
-					</div>
-					<div class="col-lg-3 col-md-3">
-						<p>Message publié par : <?= $value['id_user'] ?></p>
-						<p>Le : <?= $value['date_pub'] ?></p>
+	<div class="container">
+		<div class="col-lg-10 forum_title">
+			<h2 class="forum_title">Les Responses</h2>
+		
+		<?php if (!empty($reponses)) : ?>         	
+			<?php foreach ($reponses as $key => $value) : ?>
+			<div class="container">
+				<div class="col-lg-9 col-md-9 forum_list">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 border-right">
+							<p><?= $value['message'] ?></p>
+						</div>
+						<div class="col-lg-4 col-md-4">
+							<p>Message publié par : <?= $value['firstname']." ".$value['lastname'] ?></p>
+							<p>Le : <?= $value['date_pub'] ?></p>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<?php endforeach ; ?>                	                      
-	<?php endif; ?>
+			<?php endforeach ; ?>                	                      
+		<?php endif; ?>
 
+		</div>
+	</div>
 
 	<div class="container">
 		<div class="col-lg-10 forum_list">
