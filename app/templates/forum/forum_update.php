@@ -21,50 +21,38 @@ $this->stop('nav');
 
 <?php $this->start('main') ?>
 
-	<!-- Forum Searchbar -->
+		<!-- Forum Searchbar -->
 	<?php  include '../app/templates/partials/search_forum.php'; ?>
 
 	<!-- Forum Breadcrumb -->
 	<?php  include '../app/templates/partials/breadcrumb.php'; ?>
-
-
-	<div class="container">
-		<div class="jumbotron">
-			<h1>Publiez sur le Forum</h1>
-		</div>
-	</div>
 	
+
 	<div class="container vertical_align">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               	<div class="bloc_profile">
 
-	                <h2 class="profile_head">Nouveau Sujet</h2>
+	                <h2 class="profile_head">Editez Votre Publication</h2>
 	                
-	                <form id="changeProfile" method="POST">
-	                    
-	                  
+	                <form method="POST">
+	                         
 						<div class=<?php if (!empty($errors)) { echo "errors";} ?>>
 
 		                    <p><?php if(isset($errors['title'])) { echo $errors['title'];} ?></p>
 		                    <p><?php if(isset($errors['content'])) { echo $errors['content'];} ?></p>
-		                    <p><?php if(isset($errors['category'])) { echo $errors['category'];} ?></p>
 		                </div>
 
 	                    <label for="inp_title">Titre</label>
-	                    <input type="text" class="form-control" name="inp_title" placeholder="Un titre" id="inp_title">
-	                    
+	                    <input type="text" class="form-control" name="inp_title" value="<?= $post[0]['titre'] ?>" id="inp_title">
+	                    <p></p>
 	                    <label for="inp_content">Contenu</label>
-	                    <input type="text" class="form-control" name="inp_content" placeholder="Le contenu" id="inp_content">
+	                    <input type="text" class="form-control" name="inp_content" value="<?= $post[0]['message'] ?>" id="inp_content">
+						<p></p>
+                    	<p class="form-control yellow">Nous vous informons que vous ne pouvez pas changer la catégorie de votre post.</p>
 
-						<label for="sel_category">Catégorie</label>
-	                    <select class="form-control" name="inp_category" id="sel_category">
-		                    <?php foreach ($_SESSION['roles'] as $key => $value) : ?>
-		                    	<option value="<?= $value ?>"><?= $value ?></option>
-		                    <?php endforeach ?>
-						</select>
 
-	                    <button name="btn_f_create" id="btn_f_create" class="btn tb-margin-buffer">Creer</button>
+	                    <button name="btn_f_update" id="btn_f_update" class="btn tb-margin-buffer">Éditer</button>
 
 
 	                </form>
@@ -73,6 +61,8 @@ $this->stop('nav');
             </div> <!-- end col md 12 -->
         </div> <!-- end row -->
     </div> <!-- end container -->
+
+
 
 
 

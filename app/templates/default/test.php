@@ -31,7 +31,7 @@ $this->stop('nav');
 
 <h2>This is roles</h2>
 <pre>
-	<?php print_r($roles) ?>
+	<?php print_r($search_result) ?>
 </pre>
 
 

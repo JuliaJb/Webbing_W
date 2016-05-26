@@ -6,3 +6,46 @@
 			</a>
 		</div>
 	</div>
+
+	<!-- Forum Nav depending on Roles -->
+	<?php $adminkey =  array_search('Admin', $_SESSION['roles']);
+		   if ($adminkey) {
+		   	$showall = True;
+		   	$showNoSurprise = False;
+		   }
+		  $mariekey =  array_search('Marie', $_SESSION['roles']);
+		  if ($mariekey) {
+		  	$showall = False;
+		  	$showNoSurprise = True;
+		  }
+	?>
+
+
+
+
+	<div class="container">
+		<h2>Les Catégories</h2>
+		<?php if($showall) : ?>
+			<ul class="nav nav-tabs">
+				<li role="presentation"><a href="/forum/france">France</a></li>
+				<li role="presentation"><a href="/forum/maurice">Maurice</a></li>
+				<li role="presentation"><a href="/forum/bachelorette">Bachelorette</a></li>
+				<li role="presentation"><a href="/forum/bachelor">Bachelor</a></li>
+				<li role="presentation"><a href="/forum/surprise">Surprise</a></li>
+			</ul>
+		<?php elseif ($showNoSurprise) : ?>
+			<ul class="nav nav-tabs">
+				<li role="presentation"><a href="/forum/france">France</a></li>
+				<li role="presentation"><a href="/forum/maurice">Maurice</a></li>
+				<li role="presentation"><a href="/forum/bachelorette">Bachelorette</a></li>
+				<li role="presentation"><a href="/forum/bachelor">Bachelor</a></li>
+			</ul>
+		<?php else : ?>
+			<ul class="nav nav-tabs">
+				<li role="presentation"><a href="/forum/surprise">Surprise</a></li>
+			<?php foreach ($_SESSION['roles'] as $key => $value) : ?>
+				<li role="presentation"><a href="/forum/<?= $value ?>"><?= $value ?></a></li>		
+			<?php endforeach ; ?>
+			</ul>
+		<?php endif ?>
+	</div>

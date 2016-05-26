@@ -1,7 +1,9 @@
 /* ==========================//
  *     CODE ADRIANA FORUM
  * ==========================*/
-
+.yellow {
+	background-color: #FFF8E1;
+}
 
 .right {
 	text-align: right;
@@ -17,6 +19,11 @@
 	margin-bottom: 10px;
 }
 
+.rl-margin-buffer {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
 #btn_f_create {
 	background-color: #FF9100;
 	color: #000;
@@ -26,6 +33,7 @@
 .forum_list {
 	margin: 10px auto;
 	padding: 20px;
+	background-color: #fff;
 	border: 1px solid #eeeeee;
 	box-shadow: 2px 2px 2px #ccc;
 }
@@ -52,10 +60,22 @@ label[for=forum_search] {
 	width: 250px;
 	border: 2px solid #fff;
 	border-radius: 5px;
+	color: #000;
+}
+
+#btn_search {
+	background-color: #F76C6F;
 }
 
 .new_post {
 	background-color: orange;
+}
+
+.button {
+	min-width: 200px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;	
 }
 
 /* -- forum_create -- */

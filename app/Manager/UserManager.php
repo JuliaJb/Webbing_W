@@ -185,7 +185,10 @@ class UserManager extends \W\Manager\Manager {
 			 		$roles[] = "Bachelorette";
 			 		break;
 			 	case 6:
-			 		$roles[] = "Futur";
+			 		$roles[] = "Surpise";
+			 		break;
+			 	case 7:
+			 		$roles[] = "Marie";
 			 		break;
 			 	default:
 			 		$roles[] = "None";

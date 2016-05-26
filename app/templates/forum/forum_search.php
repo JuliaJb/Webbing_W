@@ -31,18 +31,31 @@ $this->stop('nav');
 	<!-- Forum Nav - Dynamic according to Roles -->
 	<?php  include '../app/templates/partials/nav_forum.php'; ?>
 
-	<!-- Posts Filtered by Category -->
-	<?php if (!empty($filtered)) : ?>
+	<pre>
+		<?php print_r($search_result) ?>
+	</pre>
+
+	<h1>This is post</h1>
+	<pre>
+		<?php print_r($_POST) ?>
+	</pre>
+
+	<!-- If search bar input empty, show error -->
+	<?php  if(isset($error)) :  ?>
+		<h2><?= $error ?></h2>
+	<?php endif ?>
+	
+	<!-- Results from Search -->
+	<?php if (!empty($search_result)) : ?>
 	<div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               	
-					<?php foreach ($filtered as $key => $value) : ?>
+					<?php foreach ($search_result as $key => $value) : ?>
 						<div class="forum_list">
 							<a href="/forum/detail/<?= $value['id']?>"><h2 class="profile_head"> <?= $value['titre'] ?> </h2></a>
 							<p> <?= $value['message'] ?> </p>
 							<p> <?= $value['date_publication'] ?> </p>
-							<p> <strong>Publié par : </strong> <?= $value['firstname']." ".$value['lastname'] ?> </p>
 							<p> <strong>Categorie : </strong> <?= $value['category'] ?> </p>
 							
 							<!-- Access to Update and Delete if Logged user is author -->

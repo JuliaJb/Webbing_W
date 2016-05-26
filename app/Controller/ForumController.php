@@ -10,13 +10,12 @@ class ForumController extends Controller
 	//List all Forum Topics 
 	public function post_list()
 	{
-		$this->get_user_role(); 
 
 		$manager = new \Manager\PostManager();
 
 		$result = $manager->findAll();
 
-		$this->show('forum/forum_list', ['result' => $result]);
+		$this->show('forum/forum_admin', ['result' => $result]);
 
 	}
 
@@ -120,9 +119,87 @@ class ForumController extends Controller
 		$this->show('forum/forum_create', ['errors' => $errors]);
 	}
 
+	//Update a Post
+	public function post_update($id)
+	{
+		$manager = new \Manager\PostManager();
+
+		$post = $manager->get_post_and_author($id);
+
+		if (isset($_POST['btn_f_update'])) 
+		{
+			$errors = array();
+
+			if (empty($_POST['inp_title']))
+			{
+				$errors['title'] = "Vous avez oublié d'inclure le titre";
+			}
+
+			if(empty($_POST['inp_content']))
+			{
+				$errors['content'] = "Vous avez oublié d'inclure le contenu";
+			}
+
+			if (empty($errors))
+			{
+				$data = [
+					'titre' => $_POST['inp_title'],
+					'message' => $_POST['inp_content'],
+					'date_publication' => date('Y-m-d')
+				];
+
+				//update($data, $id)
+				$manager->update($data, $id);
+
+				$this->redirectToRoute('filter', ['cat' => $post[0]['category']]);
+			}
+
+		}
+
+		$this->show('forum/forum_update', ['post' => $post, 'errors' => $errors]);
+	}
+
+	//Delete a Post
+	public function post_delete($id)
+	{
+		$manager = new \Manager\PostManager();
+
+		$post = $manager->get_post_and_author($id);
+
+		if (isset($_POST['btn_f_delete'])) 
+		{
+			if($_POST['delete'] == 0 )
+			{
+				$this->redirectToRoute('forum_detail', ['id' => $id]);
+			}
+
+			if($_POST['delete'] == 1 )
+			{
+				$cat = $_SESSION['roles'][0];
+				$manager->delete($id);
+				$this->redirectToRoute('filter', ['cat' => $cat ]);
+			}
+
+		}
+
+		$this->show('forum/forum_delete', ['post' => $post]);
+	}
+
+	public function search_bar()
+	{
+		//Search Manager
+		$smanager = new \Manager\PostManager();
+
+		$kwrd = $_POST['inp_search'];
+		$search_result = $manager->search($kwrd);
+
+			//$this->redirectToRoute('test', ['search_result' => $search_result]);
+
+		$this->show('forum/forum_search', ['search_result' => $search_result]);
+
+	}
 
 	//Répondre un sujet
-
 	public function post_reply() 
 	{
 		return "ok";
