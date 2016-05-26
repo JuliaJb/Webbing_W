@@ -185,10 +185,21 @@ class ForumController extends Controller
 		$this->show('forum/forum_delete', ['post' => $post]);
 	}
 
+	public function search_bar()
+	{
+		//Search Manager
+		$smanager = new \Manager\PostManager();
 
+		$kwrd = $_POST['inp_search'];
+		$search_result = $manager->search($kwrd);
+
+			//$this->redirectToRoute('test', ['search_result' => $search_result]);
+
+		$this->show('forum/forum_search', ['search_result' => $search_result]);
+
+	}
 
 	//Répondre un sujet
-
 	public function post_reply() 
 	{
 		return "ok";

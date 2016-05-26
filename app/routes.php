@@ -17,6 +17,7 @@
 		['GET|POST', '/forum/detail/[:id]', 'Forum#post_detail', 'forum_detail'],
 		['GET|POST', '/forum/update/[:id]', 'Forum#post_update', 'forum_update'],
 		['GET|POST', '/forum/delete/[:id]', 'Forum#post_delete', 'forum_delete'],
+		['GET|POST', '/forum/search', 'Forum#search_bar', 'search_bar'],
 
 
 

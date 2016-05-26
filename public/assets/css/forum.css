@@ -60,6 +60,11 @@ label[for=forum_search] {
 	width: 250px;
 	border: 2px solid #fff;
 	border-radius: 5px;
+	color: #000;
+}
+
+#btn_search {
+	background-color: #F76C6F;
 }
 
 .new_post {

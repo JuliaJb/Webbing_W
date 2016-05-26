@@ -25,6 +25,17 @@ class PostManager extends \W\Manager\Manager
 		$sth->execute();
 
 		return $sth->fetchAll();
-
 	}
+
+	//Get the post and author of a single post
+	public function search($kwrd)
+	{
+		$sql = "SELECT * FROM `posts` WHERE `message` like '%:kwrd%' or `titre` like '%:kwrd%'";
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(":kwrd", $kwrd);
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
+
 }
