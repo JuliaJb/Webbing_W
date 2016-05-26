@@ -215,7 +215,7 @@ $this->stop('nav');
 
                             <?php foreach ($invites as $key => $value) { ?>
 
-                            <tr class="danger">
+                            <tr class="blue">
                                 <td><?= $invites[$key]['lastname']; ?></td>
                                 <td><?= $invites[$key]['firstname']; ?></td>
                             </tr>
@@ -250,7 +250,7 @@ $this->stop('nav');
 
                             <?php foreach ($invitesOuiMa as $key => $value) { ?>
 
-                            <tr class="danger">
+                            <tr class="blue">
                                 <td><?= $invitesOuiMa[$key]['lastname']; ?></td>
                                 <td><?= $invitesOuiMa[$key]['firstname']; ?></td>
                             </tr>
@@ -282,7 +282,7 @@ $this->stop('nav');
 
                             <?php foreach ($invitesNonMa as $key => $value) { ?>
 
-                            <tr class="danger">
+                            <tr class="blue">
                                 <td><?= $invitesNonMa[$key]['lastname']; ?></td>
                                 <td><?= $invitesNonMa[$key]['firstname']; ?></td>
                             </tr>
@@ -317,7 +317,7 @@ $this->stop('nav');
 
                             <?php foreach ($invitesOuiFr as $key => $value) { ?>
 
-                            <tr class="danger">
+                            <tr class="blue">
                                 <td><?= $invitesOuiFr[$key]['lastname']; ?></td>
                                 <td><?= $invitesOuiFr[$key]['firstname']; ?></td>
                             </tr>
@@ -349,7 +349,7 @@ $this->stop('nav');
 
                             <?php foreach ($invitesNonFr as $key => $value) { ?>
 
-                            <tr class="danger">
+                            <tr class="blue">
                                 <td><?= $invitesNonFr[$key]['lastname']; ?></td>
                                 <td><?= $invitesNonFr[$key]['firstname']; ?></td>
                             </tr>

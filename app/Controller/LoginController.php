@@ -302,9 +302,9 @@ class LoginController extends Controller
 
 			if (isset($_POST['enfants']) && $_POST['enfants'] == "1") 
 			{
-				if (empty($_POST['enfants_name'])) 
+				if (empty($_POST['child1Prenom']) || empty($_POST['child1Nom'])) 
 				{
-					$errors['enfants_name'] = "Veuillez renseigner les prénoms de votre(vos) enfant(s)";
+					$errors['enfants_name'] = "Veuillez renseigner le(s) nom(s) et prénom(s) de votre(vos) enfant(s)";
 				}
 			}
 
@@ -325,11 +325,21 @@ class LoginController extends Controller
 					'children' => $_POST['enfants'],
 					'diet' => $_POST['regime'],
 					'aliments' => $_POST['aliment_specs'],
+					'musique' => $_POST['musique'],
 					'rsvpMa' => $_POST['rsvpMa'],
 					'rsvpFr' => $_POST['rsvpFr'],
+					'rsvpFr' => $_POST['rsvpFr'],
+					'ChildLastname1' => $_POST['child1Nom'],
+					'ChildFirstname1' => $_POST['child1Prenom'],
+					'ChildLastname2' => $_POST['child2Nom'],
+					'ChildFirstname2' => $_POST['child2Prenom'],
+					'ChildLastname3' => $_POST['child3Nom'],
+					'ChildFirstname3' => $_POST['child3Prenom'],
 				];
 					
 				$result = $manager->update($data, $users['id']);
+
+
 
 
 
@@ -338,7 +348,7 @@ class LoginController extends Controller
 			else
 			{
 
-				$this->show('default/mon_profil', ['errors' => $errors]);
+				$this->show('default/mon_profil', ['errors' => $errors, 'profil' => $profil]);
 			}
 
 		}

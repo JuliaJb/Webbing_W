@@ -5,7 +5,7 @@ $( document ).ready(function() {
 
 
 	// Liste des invités, au clic on affiche les caractéristiques de chaque invité
-	$('.danger').click(function(){
+	$('.blue').click(function(){
 
 		$(this).next().toggle( "slow", function() {
     		$(this).next().css("display", "table-row");

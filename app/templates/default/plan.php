@@ -16,9 +16,10 @@ $this->start('nav');
 $this->stop('nav');
 
 
-// $json = $_POST['json'];
+if(isset($json)){
 
-// var_dump($json);
+	var_dump($json);
+}
 
 
 ?>
@@ -62,12 +63,37 @@ $this->stop('nav');
 			
 		</section>
 
+		<section class="table">
+
+			<article class="droppable"><span class="placeNumber">17</span></article>
+			<article class="droppable"><span class="placeNumber">18</span></article>
+			<article class="droppable"><span class="placeNumber">19</span></article>
+			<article class="droppable"><span class="placeNumber">20</span></article>
+			<article class="droppable"><span class="placeNumber">21</span></article>
+			<article class="droppable"><span class="placeNumber">22</span></article>
+			<article class="droppable"><span class="placeNumber">23</span></article>
+			<article class="droppable"><span class="placeNumber">24</span></article>
+			
+		</section>
+
+		<section class="table">
+
+			<article class="droppable"><span class="placeNumber">25</span></article>
+			<article class="droppable"><span class="placeNumber">26</span></article>
+			<article class="droppable"><span class="placeNumber">27</span></article>
+			<article class="droppable"><span class="placeNumber">28</span></article>
+			<article class="droppable"><span class="placeNumber">29</span></article>
+			<article class="droppable"><span class="placeNumber">30</span></article>
+			<article class="droppable"><span class="placeNumber">31</span></article>
+			<article class="droppable"><span class="placeNumber">32</span></article>
+			
+		</section>
+
 	
 	</div>
 
-	<form>
-		<button>Valider le plan de table</button>
-	</form>
+		<button name="valider" class="valider">Valider le plan de table</button>
+
 
 	
 

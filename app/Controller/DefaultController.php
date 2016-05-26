@@ -10,9 +10,42 @@ class DefaultController extends Controller
 
 	public function home()
 	{
+		$manager = new \Manager\UserManager();
+
+		$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
 		
-		$this->show('default/home');
+
+		if (isset($_POST['valid_home_Ma'])) {
+			$data = [
+					'rsvpMa' => $_POST['rsvpMa'],
+				];
+					
+			$result = $manager->update($data, $_SESSION['id']);
+
+			$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
+
+			$this->show('default/home', ['profil' => $profil]);
+
+		}
+
+		if (isset($_POST['valid_home_Fr'])) {
+			$data = [
+					'rsvpFr' => $_POST['rsvpFr'],
+				];
+					
+			$result = $manager->update($data, $_SESSION['id']);
+
+			$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
+
+			$this->show('default/home', ['profil' => $profil]);
+
+		}
+
+		$this->show('default/home', ['profil' => $profil]);
 	}
+
+
+
 
 	public function info_france()
 	{

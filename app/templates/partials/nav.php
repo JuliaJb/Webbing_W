@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="/home"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-          <li class="active"><a href="/forum/<?= $_SESSION['roles'][0]?>">Forum</a></li>
+          <li><a href="/forum/<?= $_SESSION['roles'][0]?>">Forum</a></li>
           <li><a href="/photo">Photo</a></li>
           
           <!-- Show info according to roles -->
