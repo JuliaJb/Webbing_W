@@ -90,14 +90,28 @@ $this->stop('nav');
 		                    <p><?php if(isset($errors['enfants'])) { echo $errors['enfants'];} ?></p>
 		                </div>
 
-	                    <textarea name="enfants_name" class="<?= (isset($profil['children']) && $profil['children'] == "1")? "visible": "novisible" ?>" cols="100" placeholder="Pouvez-vous nous indiquer son(leur) prénom ?"></textarea>
+		                <div id="bloc_child" class="<?= (isset($profil['children']) && $profil['children'] == "1")? "visible": "novisible" ?>">
 
-	                    <div class=<?php if (isset($errors['enfants_name'])) { echo "errorsProfil";} ?>>
-		                    <p><?php if(isset($errors['enfants_name'])) { echo $errors['enfants_name'];} ?></p>
-		                </div>
+			                <label class="childLabel">1er Enfant</label>
+			                <input type="text" name="child1Prenom" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname1'])) { echo $profil['ChildFirstname1'];} ?>">
+			                <input type="text" name="child1Nom" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname1'])) { echo $profil['ChildLastname1'];} ?>">
+		             
+		                    <label class="childLabel">2ème Enfant</label>
+		                   	<input type="text" name="child2Prenom" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname2'])) { echo $profil['ChildFirstname2'];} ?>">
+			                <input type="text" name="child2Nom" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname2'])) { echo $profil['ChildLastname2'];} ?>">
+
+		                    <label class="childLabel">3ème Enfant</label>
+		                    <input type="text" name="child3Prenom" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname3'])) { echo $profil['ChildFirstname3'];} ?>">
+			                <input type="text" name="child3Nom" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname3'])) { echo $profil['ChildLastname3'];} ?>">
+
+		                    <div class=<?php if (isset($errors['enfants_name'])) { echo "errorsProfil";} ?>>
+			                    <p><?php if(isset($errors['enfants_name'])) { echo $errors['enfants_name'];} ?></p>
+			                </div>
+
+			            </div>
 
 	                    <p><span class="glyphicon glyphicon-headphones" aria-hidden="true"></span> Aidez-nous à faire notre playlist en nous disant ce que vous aimez :</p>
-	                    <textarea name="musique" cols="100" placeholder="Un artiste, un album, un titre, tout ce qui vous vient :)"></textarea>
+	                    <textarea name="musique" cols="100" placeholder="Un artiste, un album, un titre, tout ce qui vous vient :)"><?php if(isset($profil['musique'])) { echo $profil['musique']; } ?></textarea>
 
 	                    <button name="btnChangeProfile" id="btnChangeId" class="btn btn_profile">Valider</button>
 

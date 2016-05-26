@@ -277,3 +277,23 @@ input[type=radio] {
   border-bottom: 2px solid #fff;
 }
 
+.childLabel {
+  display: block;
+}
+
+#bloc_child .childInput{
+  width: 50%;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 10px; 
+}
+
+
+
+
+
+
+
+
+
+

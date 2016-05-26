@@ -1,8 +1,8 @@
 .table {
     background-color: #eee;
-    width: 70rem;
+    width: 30rem;
     margin: 5rem auto 0 auto;
-    height: 25rem;
+    height: 30rem;
     position: relative;
     border-radius: 50%;
 }
@@ -16,14 +16,18 @@
 
 .draggable {
     border: .1rem solid black;
-    padding: 1rem 1.5rem;
+    padding: 5px;
     background-color: white;
     margin-bottom: 10px;
+    font-size: 12px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
 }
 
 .droppable {
-	width: 9rem;
-	height: 9rem;
+	width: 6rem;
+	height: 6rem;
 	display: inline-block;
 	background-color: white;
 	border:.1rem dotted black;

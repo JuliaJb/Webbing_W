@@ -103,7 +103,7 @@ $(document).ready(function() {
 	verticalAlignCenter(".vertical_align");
 	reloadResize();
 	textareaDisplay('input[name="regime"]:eq(0)', 'input[name="regime"]:eq(1)', 'textarea[name="aliment_specs"]');
-	textareaDisplay('input[name="enfants"]:eq(0)', 'input[name="enfants"]:eq(1)', 'textarea[name="enfants_name"]');
+	textareaDisplay('input[name="enfants"]:eq(0)', 'input[name="enfants"]:eq(1)', '#bloc_child');
 
 
 	// ************************************ //

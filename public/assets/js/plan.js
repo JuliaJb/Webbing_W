@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 	var planTable = [];
+	
 
 	function addNewGuest(nom, prenom){
 		$('#guestList').append(''+
@@ -34,12 +35,13 @@ $(document).ready(function(){
 		   		if(count = 1) {
 		   			stock = i;
 		   		}
-			   	if (planTable[i].guest == userName+" "+userFirstName) {
+			   	if (planTable[i].guestL == userName && planTable[i].guestF == userFirstName) {
 			   		console.log("c'est bon, index :"+i);
 			   		count++;
 
 			   		if(count > 1) {
-			   			planTable[stock].guest = 0;
+			   			planTable[stock].guestL = 0;
+			   			planTable[stock].guestF = 0;
 			   		}
 
 			   	}
@@ -49,11 +51,13 @@ $(document).ready(function(){
 			   
 			}
 
-			planTable[userPlace].guest = userName+" "+userFirstName;
+			planTable[userPlace].guestF = userFirstName;
+			planTable[userPlace].guestL = userName;
 			console.log(planTable);
-			
-			console.log(count);
 
+
+			console.log(count);
+			
 		}
 	});
 
@@ -65,9 +69,9 @@ $(document).ready(function(){
 
 		success: function(data){
 
-			for (var j = 0; j <= 16; j++) {
+			for (var j = 0; j <= 32; j++) {
 
-				planTable.push({place:j, guest:0});
+				planTable.push({place:j, guestF:0, guestL:0});
 
 			}
 
@@ -84,23 +88,29 @@ $(document).ready(function(){
 		}
 	})
 
+	$('.valider').click(function(){
 
-	$.ajax({
-		url:'plan',
-		type:'post',
-		data:{ json: "planTable" },
+		console.log("helloooo");
 
-		success:function(data){
-		//réponse du serveur
-		},
-		error: function(){
-			console.log('Bad Request...');
-		},
-		complete: function(){
-			console.log('complete');
-		}
-	
+		$.ajax({
+			url:'http://localhost:8888/plan',
+			type:'POST',
+			data:({planTable:planTable}),
+
+			success:function(data){
+				alert(data);
+			},
+			error: function(){
+				console.log('Bad Request...');
+			},
+			complete: function(){
+				console.log('complete');
+			}
+		
+		});
+
 	});
+
 
 
 
