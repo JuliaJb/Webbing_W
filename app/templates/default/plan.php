@@ -35,69 +35,105 @@ if(isset($json)){
 	</div>
 
 
-	<div class="col-md-8">
+	<div class="col-md-8 plan_table">
 
-		<section class="table">
+		<div class="col-md-4">
 
-			<article class="droppable"><span class="placeNumber">1</span></article>
-			<article class="droppable"><span class="placeNumber">2</span></article>
-			<article class="droppable"><span class="placeNumber">3</span></article>
-			<article class="droppable"><span class="placeNumber">4</span></article>
-			<article class="droppable"><span class="placeNumber">5</span></article>
-			<article class="droppable"><span class="placeNumber">6</span></article>
-			<article class="droppable"><span class="placeNumber">7</span></article>
-			<article class="droppable"><span class="placeNumber">8</span></article>
+			<section class="table">
+
+				<?php for ($i=1; $i <= 8; $i++) : ?>
+
+				<article class="droppable"><span class="placeNumber"><?= $i ?></span></article>
+				
+				<?php endfor; ?>
+
+			</section>
+
+			<section class="table">
+
+				<?php for ($i=9; $i <= 16; $i++) : ?>
+
+				<article class="droppable"><span class="placeNumber"><?= $i ?></span></article>
+				
+				<?php endfor; ?>
+				
+			</section>
+
+			<section class="table">
+
+				<?php for ($i=17; $i <= 24; $i++) : ?>
+
+				<article class="droppable"><span class="placeNumber"><?= $i ?></span></article>
+				
+				<?php endfor; ?>
+				
+			</section>
+
+			<section class="table">
+
+				<?php for ($i=25; $i <= 32; $i++) : ?>
+
+				<article class="droppable"><span class="placeNumber"><?= $i ?></span></article>
+				
+				<?php endfor; ?>
+				
+			</section>
+
+
+		</div>
+
+
+		<div class="col-md-4">
+
+			<section class="table">
+
+				<?php for ($i=33; $i <= 40; $i++) : ?>
+
+				<article class="droppable"><span class="placeNumber"><?= $i ?></span></article>
+				
+				<?php endfor; ?>
+				
+			</section>
+
+
+			<section class="table">
+
+				<?php for ($i=41; $i <= 48; $i++) : ?>
+
+				<article class="droppable"><span class="placeNumber"><?= $i ?></span></article>
+				
+				<?php endfor; ?>
+				
+			</section>
+
+			<section class="table">
+
+				<?php for ($i=49; $i <= 56; $i++) : ?>
+
+				<article class="droppable"><span class="placeNumber"><?= $i ?></span></article>
+				
+				<?php endfor; ?>
+				
+			</section>
+
+			<section class="table">
+
+				<?php for ($i=57; $i <= 64; $i++) : ?>
+
+				<article class="droppable"><span class="placeNumber"><?= $i ?></span></article>
+				
+				<?php endfor; ?>
+				
+			</section>
 			
-		</section>
-
-		<section class="table">
-
-			<article class="droppable"><span class="placeNumber">9</span></article>
-			<article class="droppable"><span class="placeNumber">10</span></article>
-			<article class="droppable"><span class="placeNumber">11</span></article>
-			<article class="droppable"><span class="placeNumber">12</span></article>
-			<article class="droppable"><span class="placeNumber">13</span></article>
-			<article class="droppable"><span class="placeNumber">14</span></article>
-			<article class="droppable"><span class="placeNumber">15</span></article>
-			<article class="droppable"><span class="placeNumber">16</span></article>
 			
-		</section>
 
-		<section class="table">
+		</div>
 
-			<article class="droppable"><span class="placeNumber">17</span></article>
-			<article class="droppable"><span class="placeNumber">18</span></article>
-			<article class="droppable"><span class="placeNumber">19</span></article>
-			<article class="droppable"><span class="placeNumber">20</span></article>
-			<article class="droppable"><span class="placeNumber">21</span></article>
-			<article class="droppable"><span class="placeNumber">22</span></article>
-			<article class="droppable"><span class="placeNumber">23</span></article>
-			<article class="droppable"><span class="placeNumber">24</span></article>
-			
-		</section>
-
-		<section class="table">
-
-			<article class="droppable"><span class="placeNumber">25</span></article>
-			<article class="droppable"><span class="placeNumber">26</span></article>
-			<article class="droppable"><span class="placeNumber">27</span></article>
-			<article class="droppable"><span class="placeNumber">28</span></article>
-			<article class="droppable"><span class="placeNumber">29</span></article>
-			<article class="droppable"><span class="placeNumber">30</span></article>
-			<article class="droppable"><span class="placeNumber">31</span></article>
-			<article class="droppable"><span class="placeNumber">32</span></article>
-			
-		</section>
-
+		<button name="valider" class="btn btn_form_darkBlue">Valider le plan de table</button>
 	
 	</div>
 
-		<button name="valider" class="valider">Valider le plan de table</button>
-
-
-	
-
-	<p>Valider et imprimer le plan de table en <a href="#">cliquant ici</a></p>
 
 
 
