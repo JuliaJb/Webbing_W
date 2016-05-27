@@ -31,9 +31,16 @@ $this->stop('nav');
 	<!-- Forum Nav - Dynamic according to Roles -->
 	<?php  include '../app/templates/partials/nav_forum.php'; ?>
 
-	<pre>
-		<?php print_r($search_result) ?>
-	</pre>
+	
+
+	
+	<?php if (!empty($search_result)) : ?>
+		<pre><?php print_r($search_result) ?></pre>
+	<?php else : ?>
+		<p>There is no search result</p>
+	<?php endif ?>
+
+
 
 	<h1>This is post</h1>
 	<pre>
