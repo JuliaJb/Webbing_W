@@ -3,11 +3,12 @@ $(document).ready(function(){
 	var planTable = [];
 	
 
-	function addNewGuest(nom, prenom){
+	function addNewGuest(nom, prenom, seat){
 		$('#guestList').append(''+
-			'<article class="draggable">'+
-			'<p class="nom">' + nom + '<p>'+
+			'<article class="draggable" data-seat="'+seat+'">'+
+			'<p class="nom">' +nom + '<p>'+
 			'<p class="prenom">' + prenom + '</p>'+
+			'<p>' + seat + '</p>'+
 			'</article>'
 			)
 	}
@@ -67,7 +68,7 @@ $(document).ready(function(){
 
 		success: function(data){
 
-			for (var j = 0; j <= 32; j++) {
+			for (var j = 0; j <= 64; j++) {
 
 				planTable.push({place:j, guestF:0, guestL:0});
 
@@ -75,7 +76,7 @@ $(document).ready(function(){
 
 			for(var i=0; i<data.length; i++){
 	
-				addNewGuest(data[i].lastname, data[i].firstname);
+				addNewGuest(data[i].lastname, data[i].firstname, data[i].seat);
 			}
 		},
 		error: function(){
@@ -86,9 +87,39 @@ $(document).ready(function(){
 		}
 	})
 
-	$('.valider').click(function(){
 
-		console.log("helloooo");
+	// placement
+
+
+	$('#actualiser').click(function(){
+
+		for (var i = 1; i <= 64; i++) {
+			
+			$('.draggable').css('position', 'absolute');
+
+			$($('.droppable[data-value="'+i+'"]').parent()).append($('*[data-seat="'+i+'"]'));
+
+			$topElem = $('*[data-value="'+i+'"]').css("top")
+			$bottomElem = $('*[data-value="'+i+'"]').css("bottom")
+			$rightElem = $('*[data-value="'+i+'"]').css("right")
+			$leftElem = $('*[data-value="'+i+'"]').css("left")
+
+			$('*[data-seat="'+i+'"]').css("top", $topElem)
+			$('*[data-seat="'+i+'"]').css("bottom", $bottomElem)
+			$('*[data-seat="'+i+'"]').css("right", $rightElem)
+			$('*[data-seat="'+i+'"]').css("left", $leftElem)
+
+
+			
+		}
+
+
+	});
+
+
+
+	$('#valider').click(function(){
+
 
 		$.ajax({
 			url:'http://localhost:8888/plan',

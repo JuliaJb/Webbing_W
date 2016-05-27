@@ -5,10 +5,11 @@
     height: 200px;
     position: relative;
     border-radius: 50%;
+    z-index: 1;
 }
 
 #guestList {
-    z-index: 100;
+    z-index: 2;
     position: relative;
 }
 
@@ -16,12 +17,14 @@
     padding: 8px;
     margin-bottom: 10px;
     font-size: 12px;
-    width: 60px;
+    width: 73px;
     height: 60px;
     text-align: center;
     background: rgba(13,71,161,0.8);
     color: #fff;
     border-radius: 15px;
+    line-height: 7px;
+    z-index: 99;
 }
 
 .droppable {
