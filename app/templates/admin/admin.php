@@ -389,12 +389,20 @@ $this->stop('nav');
                             <input type="radio" name="invitVin" value="1"> Oui
                             <input type="radio" name="invitVin" value="0"> Non
 
-
                             <p>Invité au mariage à l'ile Maurice ? *</p>
                             <input type="radio" name="invitMa" value="1"> Oui
                             <input type="radio" name="invitMa" value="0"> Non
 
+                            <p>Fera-t-il partie des bachelors ? *</p>
+                            <input type="radio" name="bachelor" value="1"> Oui
+                            <input type="radio" name="bachelor" value="0"> Non
 
+                            <p>Fera-t-il partie des bachelorettes ? *</p>
+                            <input type="radio" name="bachelorette" value="1"> Oui
+                            <input type="radio" name="bachelorette" value="0"> Non
+
+
+                            <br>
                             <button name="btnAddGuest" id="btnChangeId" class="btn">Ajouter l'invité</button>
 
 

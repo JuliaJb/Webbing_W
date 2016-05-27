@@ -112,6 +112,15 @@ class AdminController extends Controller
 
 		// ******** FIN CONTACT INVITE **********
 
+
+		// ******** FIN AJOUT INVITE **********
+
+
+			
+
+
+		// ******** FIN AJOUT INVITE **********
+
 	}
 
 	public function profil_invites()
