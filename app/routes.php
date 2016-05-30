@@ -24,6 +24,9 @@
 		// Admin
 		['GET|POST', '/admin', 'Admin#admin', 'admin'],
 		['GET|POST', '/admin/profil_invites', 'Admin#profil_invites', 'profil_invites'],
+		['GET|POST', '/admin/ajouter_invite', 'Admin#ajouter_invite', 'ajouter_invite'],
+		['GET|POST', '/admin/attribuer_roles', 'Admin#attribuer_roles', 'attribuer_roles'],
+
 
 		// plan de table
 		['GET|POST', '/plan', 'Plan#plan', 'plan'],

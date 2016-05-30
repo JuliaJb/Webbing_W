@@ -9,12 +9,12 @@
 
 	<!-- Forum Nav depending on Roles -->
 	<?php $adminkey =  array_search('Admin', $_SESSION['roles']);
-		   if ($adminkey) {
+		   if (is_int($adminkey)) {
 		   	$showall = True;
 		   	$showNoSurprise = False;
 		   }
 		  $mariekey =  array_search('Marie', $_SESSION['roles']);
-		  if ($mariekey) {
+		  if (is_int($mariekey)) {
 		  	$showall = False;
 		  	$showNoSurprise = True;
 		  }

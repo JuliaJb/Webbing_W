@@ -22,22 +22,6 @@ var verticalAlignCenter = function(element) {
 }
 
 
-var display = function(element1, element2) {
-
-
-	$(element1).click(function() {
-
-		$(element2).toggle();
-
-		if ($(element2).css('display') == 'block') {
-			$(this).css('border-radius','15px 15px 0 0');
-		}
-
-		else {
-			$(this).css('border-radius','15px 15px 15px 15px');
-		}
-	});
-}
 
 var textareaDisplay = function(inputName1, inputName2, textarea) {
 
@@ -72,27 +56,22 @@ var reloadResize = function() {
 
 $(document).ready(function() {
 
+	$('.first_co').click(function () {
+      $(this).parent().hide();
+      $('.bloc_first_co .login_head').css('border-radius','15px 15px 0 0');
+      $('.bloc_first_co').show("slide", { direction: "left" }, 1000);
+	});
 	
 
+	$('.connexion').click(function () {
+      $(this).parent().hide();
+      $('.bloc_connexion .login_head').css('border-radius','15px 15px 0 0');
+      $('.bloc_connexion').show("slide", { direction: "right" }, 1000);
+	});
 
-	// Page login en fonction de la taille d'écran
 
-	if ($(window).width() < 1200) {
 
-		display('.bloc_first_co .login_head', '.form_first_co');
 
-		display('.bloc_connexion .login_head', '.form_login');
-	   
-	}
-
-	else {
-
-	   $('.form_first_co').css('display', 'block');
-	   $('.form_login').css('display', 'block');
-	   $('.bloc_first_co .login_head').css('border-radius', '15px 15px 0 0');
-	   $('.bloc_connexion .login_head').css('border-radius', '15px 15px 0 0');
-
-	}
 
 	// ************************************ //
 	//										//

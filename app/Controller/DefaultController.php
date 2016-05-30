@@ -13,6 +13,28 @@ class DefaultController extends Controller
 		$manager = new \Manager\UserManager();
 
 		$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
+
+		$franceKey = array_search('France', $_SESSION['roles']) ;
+		$mauriceKey = array_search('Maurice', $_SESSION['roles']) ;
+		$bachelorKey = array_search('Bachelor', $_SESSION['roles']) ; 
+		$bacheloretteKey = array_search('Bachelorette', $_SESSION['roles'])  ; 
+		$maurice = false;
+		$france = false;
+		$bachelorette = false;
+		$bachelor = false;
+
+		if (is_int($bachelorKey)) {
+		  $bachelor = true;
+		}
+		if (is_int($bacheloretteKey)) {
+		  $bachelorette = true;
+		}
+		if (is_int($franceKey)) {
+		  $france = true;
+		}
+		if (is_int($mauriceKey)) {
+		  $maurice = true;
+		}
 		
 
 		if (isset($_POST['valid_home_Ma'])) {
@@ -41,7 +63,13 @@ class DefaultController extends Controller
 
 		}
 
-		$this->show('default/home', ['profil' => $profil]);
+		$this->show('default/home', [
+			'profil' => $profil,
+			'maurice' => $maurice,
+			'france' => $france,
+			'bachelorette' => $bachelorette,
+			'bachelor' => $bachelor,
+		]);
 	}
 
 
