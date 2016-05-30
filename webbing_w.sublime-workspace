@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"ma",
+				"mauriceKey"
+			],
+			[
+				"end",
+				"endforeach"
+			],
+			[
 				"show",
 				"showNoSurprise"
 			],
@@ -276,10 +284,6 @@
 				"wp_register_script"
 			],
 			[
-				"end",
-				"endif"
-			],
-			[
 				"utilisa",
 				"utilisateur"
 			],
@@ -510,36 +514,24 @@
 			[
 				"te",
 				"text-align"
-			],
-			[
-				"ready",
-				"ready	$(document).ready"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/Controller/ForumController.php",
-			"settings":
-			{
-				"buffer_size": 4089,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/templates/partials/nav_forum.php",
-			"settings":
-			{
-				"buffer_size": 1783,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/routes.php",
 			"settings":
 			{
-				"buffer_size": 1250,
+				"buffer_size": 1247,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Controller/ForumController.php",
+			"settings":
+			{
+				"buffer_size": 4011,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,15 +539,15 @@
 			"file": "app/Manager/PostManager.php",
 			"settings":
 			{
-				"buffer_size": 1030,
+				"buffer_size": 1026,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Controller/LoginController.php",
+			"file": "app/templates/partials/nav.php",
 			"settings":
 			{
-				"buffer_size": 7573,
+				"buffer_size": 3704,
 				"line_ending": "Unix"
 			}
 		},
@@ -563,18 +555,15 @@
 			"file": "app/Manager/UserManager.php",
 			"settings":
 			{
-				"buffer_size": 4626,
+				"buffer_size": 4627,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "\n\n<nav class=\"navbar navbar-default\">\n  <div class=\"container\">\n    <div class=\"container-fluid\">\n      <!-- Brand and toggle get grouped for better mobile display -->\n      <div class=\"navbar-header\">\n        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <a class=\"navbar-brand\" href=\"/home\">Marcus & Ginette</a>\n      </div>\n\n      <!-- Collect the nav links, forms, and other content for toggling -->\n      <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n        <ul class=\"nav navbar-nav\">\n          <li><a href=\"/home\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Home</a></li>\n          <li class=\"active\"><a href=\"/forum/<?= $_SESSION['roles'][0]?>\">Forum</a></li>\n          <li><a href=\"/photo\">Photo</a></li>\n          \n          <!-- Show info according to roles -->\n          <?php foreach ($_SESSION['roles'] as $key => $value) : ?>\n            <!-- If user both France and Maurice -->\n          <?php if ($value == 'Maurice' && $value == 'France') : ?>\n            <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Infos <span class=\"caret\"></span></a>\n            <ul class=\"dropdown-menu\">\n              <li><a href=\"/info_maurice\">Infos Maurice</a></li>\n              <li><a href=\"/info_france\">Infos France</a></li>\n            </ul>\n          </li>\n          \n          <!-- If user invited to France -->\n          <?php elseif ($value == 'France' && $value != 'Maurice') : ?>\n            <li><a href=\"/info_france\">Infos</a></li>\n          </ul>\n          \n          <!-- If user invited to Maurice -->\n          <?php elseif ($value == 'Maurice' ) : ?>\n            <li><a href=\"/info_maurice\">Infos</a></li>\n          </ul>\n          <?php endif ?>\n          <?php endforeach ?>\n\n\n        <!-- Verify that User has Admin access  -->\n        <?php $adminkey = array_search('Admin', $_SESSION['roles']) ?>\n        <?php $mariekey = array_search('Marie', $_SESSION['roles']) ?>\n        <?php if ($adminkey || $mariekey) : ?>\n        <ul class=\"nav navbar-nav navbar-right\">\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Bonjour <?php echo $_SESSION['firstname'] ?> <span class=\"caret\"></span></a>\n            <ul class=\"dropdown-menu\">\n              <li><a href=\"/mon_profil\">Mon profil</a></li>\n              <li><a href=\"/deconnexion\">Deconnexion</a></li>\n              <li role=\"separator\" class=\"divider\"></li>\n              <li><a href=\"/admin\">Admin</a></li>\n              <li><a href=\"/plan\">Plan de table</a></li>\n            </ul>\n          </li>\n        </ul>\n      <?php endif ?>\n      \n      <?php if ($adminkey == False && $mariekey == False ) : ?>\n        <ul class=\"nav navbar-nav navbar-right\">\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Bonjour <?php echo $_SESSION['firstname'] ?> <span class=\"caret\"></span></a>\n            <ul class=\"dropdown-menu\">\n              <li><a href=\"/mon_profil\">Mon profil</a></li>\n              <li><a href=\"/deconnexion\">Deconnexion</a></li>\n            </ul>\n          </li>\n        </ul>\n      <?php endif ?>\n      </div><!-- /.navbar-collapse -->\n    </div><!-- /.container-fluid -->\n  </div>\n</nav>\n\n",
-			"file": "app/templates/partials/nav.php",
-			"file_size": 3731,
-			"file_write_time": 131087496430000000,
+			"file": "app/templates/forum/forum_search.php",
 			"settings":
 			{
-				"buffer_size": 3732,
+				"buffer_size": 2393,
 				"line_ending": "Unix"
 			}
 		}
@@ -635,12 +624,14 @@
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/default",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/forum",
-		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/partials",
-		"/Users/abellocabic/Sites/webbing_w/Webbing_W/public/assets",
-		"/Users/abellocabic/Sites/webbing_w/Webbing_W/public/assets/css"
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/partials"
 	],
 	"file_history":
 	[
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/partials/nav_forum.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/partials/nav.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Manager/UserManager.php",
+		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Controller/LoginController.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/public/assets/css/forum.css",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/forum/forum_list.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/forum/forum_search.php",
@@ -651,17 +642,13 @@
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/forum/forum_create.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/forum/forum_admin.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/forum/forum_delete.php",
-		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/partials/nav_forum.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/default/home.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/routes.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/forum/forum_update.php",
-		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/templates/partials/nav.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Manager/PostManager.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Manager/ReponseManager.php",
-		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Manager/UserManager.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Controller/TestController.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/public/assets/css/main.css",
-		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Controller/LoginController.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Controller/ForumController.php",
 		"/Users/abellocabic/Sites/webbing_w/Webbing_W/app/Manager/Roles_UserManager.php",
 		"/Users/abellocabic/Sites/onsport/app/Manager/SportManager.php",
@@ -826,82 +813,24 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Controller/ForumController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4089,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3848,
-								3848
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3546.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/templates/partials/nav_forum.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1783,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								285,
-								285
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 144.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "app/routes.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1250,
+						"buffer_size": 1247,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								953,
-								953
+								969,
+								969
 							]
 						],
 						"settings":
@@ -913,16 +842,45 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 1,
+					"file": "app/Controller/ForumController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4011,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3855,
+								3855
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3504.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "app/Manager/PostManager.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1030,
+						"buffer_size": 1026,
 						"regions":
 						{
 						},
@@ -942,82 +900,24 @@
 						"translation.y": 60.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/Controller/LoginController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7573,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 4135.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/Manager/UserManager.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4626,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4525,
-								4525
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3420.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 3,
 					"file": "app/templates/partials/nav.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3732,
+						"buffer_size": 3704,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1996,
-								1996
+								273,
+								273
 							]
 						],
 						"settings":
@@ -1027,10 +927,68 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 522.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/Manager/UserManager.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4310,
+								4310
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3708.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/templates/forum/forum_search.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2393,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								853,
+								853
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 401.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
