@@ -10,6 +10,10 @@ body {
 	height: 100%;
 }
 
+a:hover{
+  text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Poiret One';
 }
@@ -52,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn_form_darkBlue {
-  background: rgba(13,71,161,0.6);
+  background: rgba(13,71,161,0.8);
   color: #fff;
   font-family: 'Open Sans';
   font-weight: 300;
@@ -157,6 +161,36 @@ footer h3 {
 
 .align_right {
   text-align: right;
+}
+
+.bloc_home {
+  box-shadow: 0px 3px 5px 0px #e7e7e7;
+}
+
+.bloc_home:nth-child(odd) {
+  background: #e7e7e7;
+}
+
+.bloc_home a,
+.bloc_home a:hover,
+.bloc_home a:active,
+.bloc_home a:focus {
+  color: #000;
+}
+
+.bloc_home .btn_lien_infos {
+  background-color: rgba(13,71,161,0.4);
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.bloc_home .btn_lien_forum {
+  background-color: rgba(13,71,161,0.6);
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
 }
 
   /* ************************************ //
@@ -424,10 +458,34 @@ input[type=radio] {
 
 
 
+ /* ************************************ //
+  //                                      //
+  //              Media Queries           //
+  //                                      //
+  // ************************************ */
 
 
+@media screen and (max-width: 992px) {
 
 
+  .align_left, .align_right {
+    text-align: center;
+    margin-top: 30px;
+  }
 
+
+}
+
+@media screen and (max-width: 780px) {
+
+  .header_title, .triangle {
+    display: none;
+  }
+
+  .container_header {
+    padding-top: 50px;
+  }
+
+}
 
 
