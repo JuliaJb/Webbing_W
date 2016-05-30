@@ -46,12 +46,13 @@ $this->stop('nav');
 							<p> <strong>Categorie : </strong> <?= $value['category'] ?> </p>
 							
 							<!-- Access to Update and Delete if Logged user is author -->
-							<?php if ($value['id_user'] == $_SESSION['id']) : ?>
 							<div class="button">
-								<a class="btn btn-default rl-margin-buffer" href="/forum/update/<?= $value['id'] ?>">Éditer</a>
-								<a class="btn btn-danger rl-margin-buffer" href="/forum/delete/<?= $value['id'] ?>">Supprimer</a>
-							</div>
+								<a class="btn btn-primary rl-margin-buffer" href="/forum/detail/<?= $value['id']?>">Répondre</a>
+								<?php if ($value['id_user'] == $_SESSION['id']) : ?>
+									<a class="btn btn-default rl-margin-buffer" href="/forum/update/<?= $value['id'] ?>">Éditer</a>
+									<a class="btn btn-danger rl-margin-buffer" href="/forum/delete/<?= $value['id'] ?>">Supprimer</a>
 							<?php endif ?>
+							</div>
 							
 		              	</div>
 					<?php endforeach ; ?>

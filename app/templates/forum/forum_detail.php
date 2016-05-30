@@ -26,11 +26,9 @@ $this->stop('nav');
 	?>	
 	
 	<div class="container">
-		<div class="col-lg-10 forum_list">
+		<div class="col-lg-12 forum_list bloc_question">
 
-			<div class="forum_title">
-				<h1><?= $post[0]['titre'] ?></h1>
-			</div>
+			<h1><?= $post[0]['titre'] ?></h1>
 			<div class="row">
 				<div class="col-lg-7 col-md-7 border-right">
 					<p> <?= $post[0]['message'] ?> </p>
@@ -41,19 +39,16 @@ $this->stop('nav');
 				</div>
 			</div>
 			
-			<a href="#reply_form" class="a_reply btn btn-primary right">Répondre</a>
+			<a href="#reply_form" class="a_reply btn btn-primary">Répondre</a>
 			
 		</div>		
 	</div>
 
 	<div class="container">
-		<div class="col-lg-10 forum_title">
-			<h2 class="forum_title">Les Responses</h2>
 		
 		<?php if (!empty($reponses)) : ?>         	
 			<?php foreach ($reponses as $key => $value) : ?>
-			<div class="container">
-				<div class="col-lg-9 col-md-9 forum_list">
+				<div class="col-lg-12 col-md-12 reponses">
 					<div class="row">
 						<div class="col-lg-6 col-md-6 border-right">
 							<p><?= $value['message'] ?></p>
@@ -64,16 +59,13 @@ $this->stop('nav');
 						</div>
 					</div>
 				</div>
-			</div>
 			<?php endforeach ; ?>                	                      
 		<?php endif; ?>
 
-		</div>
 	</div>
 
 	<div class="container">
-		<div class="col-lg-10 forum_list">
-			
+		<div class="col-lg-12 forum_list bloc_reponse">
 			<h2 id="reply_form">Répondre : </h2>		
 	
 			<form method="POST">
@@ -86,10 +78,9 @@ $this->stop('nav');
                 <label for="inp_content">Réponse</label>
                 <input type="text" class="form-control" name="inp_content" placeholder="Rédigez votre réponse ici" id="inp_content">
 
-                <button name="btn_f_reply" id="btn_f_reply" class="a_reply btn btn-primary">Répondre</button>
+                <button name="btn_f_reply" id="btn_f_reply" class="a_reply btn btn-primary">Poster ma réponse</button>
 
             </form>
-
 		</div>
 	</div>
 
@@ -103,6 +94,7 @@ $this->stop('nav');
 
 
 	<script src="<?= $this->assetUrl('/js/main.js') ?>"></script>
+	<script src="<?= $this->assetUrl('/js/forum.js') ?>"></script>
 
 
 <?php $this->stop('script') ?>

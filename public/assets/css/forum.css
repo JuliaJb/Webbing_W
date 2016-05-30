@@ -36,6 +36,7 @@
 	background-color: #fff;
 	border: 1px solid #eeeeee;
 	box-shadow: 2px 2px 2px #ccc;
+	border-radius: 15px;
 }
 
 #forum_searchbar {
@@ -86,6 +87,13 @@ label[for=forum_search] {
 .forum_title {
 	margin: 5px auto;
 	padding: 5px;
+	border-radius: 4px;
+	background-color: rgba(13,71,161,0.2);
+}
+
+.forum_reponses {
+	margin: 5px auto;
+	padding: 5px;
 	border: 1px solid #eeeeee;
 	border-radius: 4px;
 	background-color: #eeeeee;
@@ -96,4 +104,27 @@ label[for=forum_search] {
 	width: 150px;
 	margin: 10px auto;
 	text-align: center;
+	background: rgba(13,71,161,0.8);
 }
+
+.a_reply:hover {
+	background: rgba(13,71,161,0.4);
+}
+
+.bloc_question {
+	background: rgba(13,71,161,0.5);
+}
+
+.bloc_reponse {
+	background: #fff;
+}
+
+.reponses {
+	margin: 10px auto;
+	padding: 20px;
+	background-color: #eeeeee;
+	border: 1px solid #eeeeee;
+	box-shadow: 2px 2px 2px #ccc;
+	border-radius: 15px;
+}
+
