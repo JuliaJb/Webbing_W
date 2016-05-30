@@ -13,7 +13,6 @@ $this->start('nav');
 	include '../app/templates/partials/nav.php';
 
 $this->stop('nav');
-
 ?>
 
 
@@ -21,6 +20,35 @@ $this->stop('nav');
 
 <?php $this->start('main') ?>
 
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
+  	<div class="carousel-inner" role="listbox">
+
+  		<div class="item active">
+	      <img class="photo_carousel" src="/assets/img/evjf.jpg" alt="Saint Germain En Laye">
+	    </div>
+
+  	<?php foreach ($result as $key => $value): ?>
+
+	    <div class="item">
+	      <img class="photo_carousel" src="/assets/photo/<?php echo $result[$key]['finalname']; ?>" alt="Saint Germain En Laye">
+	    </div>
+	<?php endforeach; ?>
+
+  	</div>
+
+
+  	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    	<span class="sr-only">Previous</span>
+  	</a>
+  	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    	<span class="sr-only">Next</span>
+  	</a>
+
+</div> <!-- end of myCarousel -->
 
 
 <div class="container">
@@ -48,7 +76,7 @@ $this->stop('nav');
                 <?php endif; ?>
             </div>
 
-	        <button type="submit" name="poster" class="btn">Poster</button>
+	        <button type="submit" name="poster" class="btn btn_poster">Poster</button>
 
 	    </form>
 
@@ -58,23 +86,21 @@ $this->stop('nav');
 
 
 
-    <div class="row">
+    <div class="grid">
 
 	    <?php foreach ($result as $key => $value): ?>
 
-	    	<div class="col-md-3 picture_frame">
+	    	<div class="grid-item">
 		
-				<img class="photo" src="/assets/photo/<?php echo $result[$key]['finalname']; ?>" alt="photo" width="200px">
+				<img class="photo" src="/assets/photo/<?php echo $result[$key]['finalname']; ?>" alt="photo" width="325px">
 
 				<p class="name_poster">Posté par <?= $_SESSION['firstname']." ".$_SESSION['lastname']; ?></p>
 
 			</div>
 
 		<?php endforeach; ?>
-    	
-
+  
     </div>
-
 </div>
 
 

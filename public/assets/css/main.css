@@ -235,7 +235,7 @@ footer h3 {
 .js .input-file-trigger {
   display: block;
   padding: 14px 45px;
-  background: #39D2B4;
+  background: rgba(13,71,161,0.6);
   color: #fff;
   font-size: 1em;
   transition: all .4s;
@@ -299,6 +299,20 @@ footer h3 {
 .name_poster {
   font-family: 'Poiret One';
 }
+
+#myCarousel {
+  background: #000;
+}
+
+#myCarousel .carousel-inner .photo_carousel {
+  margin: 0 auto;
+  height: 350px;
+}
+
+.btn_poster {
+  border-radius: 8px;
+}
+
 
   /* ************************************ //
   //                                      //

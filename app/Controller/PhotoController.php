@@ -92,7 +92,7 @@ class PhotoController extends Controller
 
 			}
 
-			$result = $manager->findAll($orderBy = "1", $orderDir = "ASC");
+			$result = $manager->findAll($orderBy = "1", $orderDir = "DESC");
 
 			$this->show('default/photo', ['result' => $result, 'erreurPhoto' => $erreurPhoto]);
 

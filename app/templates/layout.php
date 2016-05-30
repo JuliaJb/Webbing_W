@@ -10,10 +10,9 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css" />
 
-	<?= $this->section('css') ?>
-
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	
+	<?= $this->section('css') ?>
 </head>
 <body>
 
@@ -38,6 +37,8 @@
     <script src="https://cdn.jsdelivr.net/jquery.chained/0.9.9/jquery.chained.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    
+    <script src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
 
     <?= $this->section('script') ?>
 
