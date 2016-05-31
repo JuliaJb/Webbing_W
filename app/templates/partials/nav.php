@@ -40,7 +40,7 @@ if (is_int($mauriceKey)) {
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="/home"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-          <li><a href="/forum/<?= $_SESSION['roles'][0]?>">Forum</a></li>
+          <li><a href="/forum/<?= ($france)? "France":"Maurice" ?>">Forum</a></li>
           <li><a href="/photo">Photo</a></li>    
           <?php if ($france && $maurice) : ?>
           <li class="dropdown">
@@ -50,7 +50,7 @@ if (is_int($mauriceKey)) {
               <li><a href="/info_france">Infos France</a></li>
             </ul>
           </li>
-          </ul>
+        </ul>
           <?php endif ?>
           
           <?php if ($france && !$maurice) : ?>
@@ -61,7 +61,7 @@ if (is_int($mauriceKey)) {
           <?php if ($maurice && !$france) : ?>
             <li><a href="/info_maurice">Infos</a></li>
           </ul>
-          </div>
+
           <?php endif ?>
           
 

@@ -122,7 +122,7 @@ $(document).ready(function(){
 			data:({planTable:planTable}),
 
 			success:function(data){
-				alert(data);
+				alert("Le plan de table est validé. Bravo !")
 			},
 			error: function(){
 				console.log('Bad Request...');

@@ -9,6 +9,8 @@
 
 	<!-- Forum Nav depending on Roles -->
 	<?php $adminkey =  array_search('Admin', $_SESSION['roles']);
+		$showall = False;
+		$showNoSurprise = False;
 		   if (is_int($adminkey)) {
 		   	$showall = True;
 		   	$showNoSurprise = False;

@@ -34,12 +34,10 @@ $this->stop('nav');
 
         <ul class="nav nav-tabs">
             <li class="active" role="presentation"><a href="#tabs-1">Statistiques</a></li>
-            <li role="presentation"><a href="#tabs-2">A la Une</a></li>
-            <li role="presentation"><a href="#tabs-3">Contact</a></li>
-            <li role="presentation"><a href="#tabs-4">Liste</a></li>
-            <li role="presentation"><a href="#tabs-5">Maurice</a></li>
-            <li role="presentation"><a href="#tabs-6">France</a></li>
-            <li role="presentation"><a href="#tabs-7">Ajout</a></li>
+            <li role="presentation"><a href="#tabs-2">Contact</a></li>
+            <li role="presentation"><a href="#tabs-3">Liste</a></li>
+            <li role="presentation"><a href="#tabs-4">Maurice</a></li>
+            <li role="presentation"><a href="#tabs-5">France</a></li>
         </ul>
     
 
@@ -106,43 +104,6 @@ $this->stop('nav');
         </div> <!-- end of tabs-1 -->
 
         <div id="tabs-2">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    
-                         
-                    <div class="forum_list">
-                        <h2>Info à la une</h2>
-                        <div class="stats">
-                            <div class="stat">
-                                <div class="circle">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                </div>  
-                                <p><?= $nbInvites['count'] ?> invités</p>
-                            </div>
-
-                            <div class="stat">
-                                <div class="circle">
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                                </div>  
-                                <p><?= $yesGuestCountMaurice['count'] ?> Oui</p>
-                            </div>
-
-                            <div class="stat">
-                                <div class="circle">
-                                    <i class="fa fa-close" aria-hidden="true"></i>
-                                </div>  
-                                <p><?= $noGuestCountMaurice['count'] ?> Non</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end of forum_list -->
-
-                </div>
-            </div> 
-        </div> <!-- end of tabs-2 -->
-
-
-        <div id="tabs-3">
 
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -197,7 +158,7 @@ $this->stop('nav');
             
         </div> <!-- end of tabs-3 -->
 
-        <div id="tabs-4">
+        <div id="tabs-3">
             
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -233,7 +194,7 @@ $this->stop('nav');
 
         </div> <!-- end of tabs-4 -->
 
-        <div id="tabs-5">
+        <div id="tabs-4">
 
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -300,7 +261,7 @@ $this->stop('nav');
             
         </div> <!-- end of tabs-5 -->
 
-        <div id="tabs-6">
+        <div id="tabs-5">
 
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -366,52 +327,6 @@ $this->stop('nav');
             </div> <!-- end of row -->
             
         </div> <!-- end of tabs-6 -->
-
-        <div id="tabs-7">
-
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="forum_list">
-                            
-                        <form id="addGuest" method="POST">
-                            
-
-                            <input type="text" name="firstname" placeholder="Prénom *">
-
-                            <input type="text" name="lastname" placeholder="Nom *">
-                          
-                            <p>Invité au mariage en France ? *</p>
-                            <input type="radio" name="invitFr" value="1"> Oui
-                            <input type="radio" name="invitFr" value="0"> Non
-
-                            <p>Invité uniquement au vin d'honneur ? *</p>
-                            <input type="radio" name="invitVin" value="1"> Oui
-                            <input type="radio" name="invitVin" value="0"> Non
-
-                            <p>Invité au mariage à l'ile Maurice ? *</p>
-                            <input type="radio" name="invitMa" value="1"> Oui
-                            <input type="radio" name="invitMa" value="0"> Non
-
-                            <p>Fera-t-il partie des bachelors ? *</p>
-                            <input type="radio" name="bachelor" value="1"> Oui
-                            <input type="radio" name="bachelor" value="0"> Non
-
-                            <p>Fera-t-il partie des bachelorettes ? *</p>
-                            <input type="radio" name="bachelorette" value="1"> Oui
-                            <input type="radio" name="bachelorette" value="0"> Non
-
-
-                            <br>
-                            <button name="btnAddGuest" id="btnChangeId" class="btn">Ajouter l'invité</button>
-
-
-                        </form>
-
-                    </div>   <!-- end of forum_list -->              
-                </div>
-            </div> <!-- end of row -->
-            
-        </div> <!-- end of tabs-7 -->
 
     </div> <!-- end of TABS -->
 

@@ -60,8 +60,10 @@ $this->stop('nav');
 						<label for="sel_category">Catégorie</label>
 	                    <select class="form-control" name="inp_category" id="sel_category">
 		                    <?php foreach ($_SESSION['roles'] as $key => $value) : ?>
-		                    	<option value="<?= $value ?>"><?= $value ?></option>
-		                    <?php endforeach ?>
+		                    	<?php if ($key != 'Admin'): ?>
+		                    		<option value="<?= $value ?>"><?= $value ?></option>
+		                    	<?php endif; ?>
+		                    <?php endforeach; ?>
 						</select>
 
 	                    <button name="btn_f_create" id="btn_f_create" class="btn tb-margin-buffer">Creer</button>
