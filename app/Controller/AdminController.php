@@ -118,6 +118,8 @@ class AdminController extends Controller
 		$imanager = new \Manager\UserManager();
 		$visiclass = "novisible";
 		$new_user = [];
+		//Id of the newly created user
+		$upId = 0;
 
 		//Gestion d'etapes :
 		if (isset($_POST['btn_ajouter']))
@@ -144,9 +146,12 @@ class AdminController extends Controller
 
 				$new_user = $imanager->insert($data);
 
+				//This ID will be used to update Roles
+				$upId = $new_user['id'];
+
 				$visiclass = "visible-inline";
 
-				$this->show('admin/ajouter_invite', ['visiclass' => $visiclass, 'new_user' => $new_user]);
+				$this->show('admin/ajouter_invite', ['visiclass' => $visiclass, 'new_user' => $new_user, 'upId' => $upId ]);
 
 			}
 			else 
@@ -184,7 +189,7 @@ class AdminController extends Controller
 				$c_errors['bachelor'] = "Vous devez indiquer si la personne est invité à l'EVG'";
 			}
 
-			if (!isset($_POST['bachelorotte']))
+			if (!isset($_POST['bachelorette']))
 			{
 				$c_errors['bachelorette'] = "Vous devez indiquer si la personne est invité à l'EVJF'";
 			}
@@ -208,11 +213,13 @@ class AdminController extends Controller
 					'invitMa' => $_POST['invitMa']
 				];
 
-				$upId = $new_user['id'];
+				//$upId  created in line 149 with new invite insert
 
-				$updated = $imanager->update($updateData , $upId);
+				$updated = $imanager->update($updateData, 35);
 
-				$this->show('default/test', [$updated]);
+				$upId = $_POST['upId'];
+
+				$this->show('default/test', ['updated' => $updated]);
 
 				//insert roles_users
 			}

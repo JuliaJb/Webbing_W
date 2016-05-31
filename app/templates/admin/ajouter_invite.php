@@ -60,6 +60,7 @@ $this->stop('nav');
                     </form>
                 </div>
 
+
                 <div class="two-thirds border-left <?= $visiclass ?>">
                     <h2 class="inv-h2">Complétez l'invitation</h2>
                     <form id="addGuest" class="tb-margin-buffer" method="POST">
@@ -72,6 +73,7 @@ $this->stop('nav');
                                 <p><strong><?= $new_user['firstname']." ".$new_user['lastname']?></strong></p>
                             </div>
                     
+                            <input type="hidden" name="upId" value="<?= $upId ?>">
 
                             <?= (!empty($c_errors['invitFr'])) ? "<div class='invit-error'><p>".$c_errors['invitFr']."</p></div>" : ""  ?>
                             <div class="inv-radio">
