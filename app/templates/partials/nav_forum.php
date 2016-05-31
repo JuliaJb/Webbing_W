@@ -22,9 +22,6 @@
 		  }
 	?>
 
-
-
-
 	<div class="container">
 		<h2>Les Catégories</h2>
 		<?php if($showall) : ?>

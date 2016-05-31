@@ -65,13 +65,11 @@ $this->stop('nav');
                     <h2 class="inv-h2">Complétez l'invitation</h2>
                     <form id="addGuest" class="tb-margin-buffer" method="POST">
                             
-                            <pre>
-                                <?php print_r($new_user) ?>
-                            </pre>
-
+                            <?php if (!empty($new_user)) : ?>
                             <div class="inv-radio">
                                 <p><strong><?= $new_user['firstname']." ".$new_user['lastname']?></strong></p>
                             </div>
+                            <?php endif ?>
                     
                             <input type="hidden" name="upId" value="<?= $upId ?>">
 
@@ -128,13 +126,6 @@ $this->stop('nav');
 
 <?php $this->stop('main') ?>
 
-<?php 
-$this->start('footer');
-
-    include '../app/templates/partials/footer.php';
-
-$this->stop('footer');
-?>
 
 <?php $this->start('script') ?>
 

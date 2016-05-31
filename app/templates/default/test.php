@@ -26,9 +26,13 @@ $this->stop('nav');
 
 
 <h2>This is updated</h2>
-<pre>
-	<?php print_r($updated) ?>
-</pre>
+<?php if (isset($updated)) : ?>
+	<pre>
+		<?php print_r($updated) ?>
+	</pre>
+<?php else : ?>
+	<h2>There is no Updated</h2>
+<?php endif ?>
 
 
 <h2>This is new user</h2>
