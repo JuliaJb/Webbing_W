@@ -40,7 +40,7 @@
 }
 
 #forum_searchbar {
-	background-color: #726A71;
+	background-color: rgba(13,71,161,0.3);
 	color: white;
 	height: 60px;
 	padding: 0;
@@ -50,6 +50,10 @@
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+}
+
+#forum_searchbar h3{
+	margin: 0;
 }
 
 label[for=forum_search] {
@@ -65,11 +69,11 @@ label[for=forum_search] {
 }
 
 #btn_search {
-	background-color: #F76C6F;
+	background-color: rgba(13,71,161,0.8);
 }
 
 .new_post {
-	background-color: orange;
+	background-color: rgba(13,71,161,0.5);
 }
 
 .button {

@@ -21,9 +21,10 @@ $this->stop('nav');
 
 <?php $this->start('main') ?>
 
-	<?php include '../app/templates/partials/search_forum.php'; 
-		  include '../app/templates/partials/breadcrumb.php';
-	?>	
+	<?php include '../app/templates/partials/search_forum.php'; ?>	
+	<?php  include '../app/templates/partials/breadcrumb.php'; ?>
+	
+
 	
 	<div class="container">
 		<div class="col-lg-12 forum_list bloc_question">
@@ -88,6 +89,7 @@ $this->stop('nav');
 
 
 <?php $this->stop('main') ?>
+
 
 
 <?php $this->start('script') ?>

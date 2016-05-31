@@ -29,15 +29,15 @@ if(isset($json)){
 
 <?php $this->start('main') ?>
 
-	<div class="col-md-4">
+	<div class="col-md-2">
 		<section id="guestList">	
 		</section>
 	</div>
 
 
-	<div class="col-md-8 plan_table">
+	<div class="col-md-10 plan_table">
 
-		<div class="col-md-4">
+		<div class="col-md-3">
 
 			<section id="table1" class="table">
 
@@ -68,6 +68,9 @@ if(isset($json)){
 				<?php endfor; ?>
 				
 			</section>
+		</div>
+
+		<div class="col-md-3">
 
 			<section id="table4" class="table">
 
@@ -80,10 +83,6 @@ if(isset($json)){
 			</section>
 
 
-		</div>
-
-
-		<div class="col-md-4">
 
 			<section id="table5" class="table">
 
@@ -106,6 +105,11 @@ if(isset($json)){
 				
 			</section>
 
+		</div>
+
+
+		<div class="col-md-3">
+
 			<section id="table7" class="table">
 
 				<?php for ($i=49; $i <= 56; $i++) : ?>
@@ -125,7 +129,6 @@ if(isset($json)){
 				<?php endfor; ?>
 				
 			</section>
-			
 			
 
 		</div>

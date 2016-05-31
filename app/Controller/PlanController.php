@@ -22,7 +22,7 @@ class PlanController extends Controller
 
 			$json = $_POST['planTable'];
 
-			for ($i=0; $i < 64; $i++) { 
+			for ($i=0; $i <= 64; $i++) { 
 				$id = $manager->checkInscription($json[$i]['guestL'], $json[$i]['guestF']);
 
 

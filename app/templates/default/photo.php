@@ -20,6 +20,7 @@ $this->stop('nav');
 
 <?php $this->start('main') ?>
 
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 

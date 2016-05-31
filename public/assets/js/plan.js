@@ -17,11 +17,6 @@ $(document).ready(function(){
 
 	$( ".droppable" ).droppable({
 		drop: function( event, ui ) {
-			// $( this ).html( "Dropped!" );
-
-
-			// console.log($('.ui-draggable-dragging .nom').text());
-			// console.log( $(this).find('.placeNumber').text() );
 
 			var userName = $('.ui-draggable-dragging .nom').text();
 			var userFirstName = $('.ui-draggable-dragging .prenom').text();

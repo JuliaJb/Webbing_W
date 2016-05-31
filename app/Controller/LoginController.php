@@ -248,6 +248,7 @@ class LoginController extends Controller
 		{
 			$errors = [];
 
+
 			// CONTROLE DES CHAMPS DU FORMULAIRE D'INSCRIPTION
 
 			if (empty($_POST['prenom'])) 
@@ -312,14 +313,10 @@ class LoginController extends Controller
 
 			if (empty($errors)) 
 			{
-				$lastnameLower = strtolower($_POST['nom']);
-				$firstnameLower = strtolower($_POST['prenom']);
-
-				$users = $manager->checkInscription($lastnameLower, $firstnameLower);
 
 				$data = [
-					'lastname' => $lastnameLower,
-					'firstname' => $firstnameLower,
+					'lastname' => $_POST['nom'],
+					'firstname' => $_POST['prenom'],
 					'email' => $_POST['email'],
 					'password' => $_POST['password'],
 					'children' => $_POST['enfants'],
@@ -337,10 +334,10 @@ class LoginController extends Controller
 					'ChildFirstname3' => $_POST['child3Prenom'],
 				];
 					
-				$result = $manager->update($data, $users['id']);
+				$result = $manager->update($data, $profil['id']);
 
-
-
+				$_SESSION["lastname"] = $_POST['nom'];
+				$_SESSION["firstname"] = $_POST['prenom'];
 
 
 				$this->redirectToRoute('home');

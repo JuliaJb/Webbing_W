@@ -87,6 +87,10 @@ footer h3 {
   margin: 0;
 }
 
+.breadcrumb {
+  font-size: 12px;
+}
+
   /* ************************************ //
   //                                      //
   //                 Header               //
