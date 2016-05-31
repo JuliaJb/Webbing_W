@@ -61,7 +61,6 @@ if (is_int($mauriceKey)) {
           <?php if ($maurice && !$france) : ?>
             <li><a href="/info_maurice">Infos</a></li>
           </ul>
-          </div>
           <?php endif ?>
           
 

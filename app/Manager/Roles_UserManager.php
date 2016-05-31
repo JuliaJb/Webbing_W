@@ -15,4 +15,14 @@ class Roles_UserManager extends \W\Manager\Manager
 		return $sth->fetchAll();
 	}
 
+	public function insert_user_role($id, $role)
+	{
+		$sql = "INSERT INTO `roles_users` (`id_user`, `id_role`) VALUES (:id, :role)";
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(":id", $id);
+		$sth->bindValue(":role", $role);
+		$sth->execute();
+
+	}
+
 }

@@ -206,22 +206,50 @@ class AdminController extends Controller
 			//Insert Roles in DB
 			else
 			{
-				//update users
-				$updateData = [
+				
+				//Update Data into users table in DB:
+				$updata =[
 					'invitFr' => $_POST['invitFr'],
 					'invitVin' => $_POST['invitVin'],
 					'invitMa' => $_POST['invitMa']
 				];
 
-				//$upId  created in line 149 with new invite insert
-
-				$updated = $imanager->update($updateData, 35);
-
 				$upId = $_POST['upId'];
 
-				$this->show('default/test', ['updated' => $updated]);
+				$updated = $imanager->update($updata, $upId);
 
-				//insert roles_users
+				//Insert Roles into roles_users table in DB :
+
+				$rmanager = new \Manager\Roles_UserManager();
+				$r_surprise = $rmanager->insert_user_role($upId, 6);
+				$new_roles = [];
+
+				if ($_POST['invitFr'] == 1 )
+				{
+					$r_france = $rmanager->insert_user_role($upId, 2);
+					$new_roles[] = $r_france;
+				}
+
+				if ($_POST['invitMa'] == 1 )
+				{
+					$r_maurice = $rmanager->insert_user_role($upId, 3);
+					$new_roles[] = $r_maurice;
+
+				}
+
+				if ($_POST['bachelor'] == 1 )
+				{
+					$r_bachelor = $rmanager->insert_user_role($upId, 4);
+					$new_roles[] = $r_bachelor;
+				}
+
+				if ($_POST['bachelorette'] == 1 )
+				{
+					$r_bachelorette = $rmanager->insert_user_role($upId, 5);
+					$new_roles[] = $r_bachelorette;
+				}
+
+				$this->redirectToRoute('ajouter_invite');
 			}
 		}
 
