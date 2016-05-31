@@ -32,27 +32,19 @@ $this->stop('nav');
 	<?php  include '../app/templates/partials/nav_forum.php'; ?>
 
 	
-
-	
-	<?php if (!empty($search_result)) : ?>
-		<pre><?php print_r($search_result) ?></pre>
-	<?php else : ?>
-		<p>There is no search result</p>
-	<?php endif ?>
-
-
-
-	<h1>This is post</h1>
-	<pre>
-		<?php print_r($_POST) ?>
-	</pre>
-
-	<!-- If search bar input empty, show error -->
-	<?php  if(isset($error)) :  ?>
-		<h2><?= $error ?></h2>
-	<?php endif ?>
-	
 	<!-- Results from Search -->
+	<?php if(empty($search_result)) : ?>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h3>Résultat Recherche : 0</h3>
+					<p>Nous sommes désolés. Il n'y a pas de publication dans le forum concernant votre recherche.</p>
+				</div>
+			</div>
+		</div>
+	<?php endif ?>
+
+
 	<?php if (!empty($search_result)) : ?>
 	<div class="container">
         <div class="row">

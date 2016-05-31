@@ -2,11 +2,11 @@
 $franceKey = array_search('France', $_SESSION['roles']) ;
 $mauriceKey = array_search('Maurice', $_SESSION['roles']) ;
 $adminKey = array_search('Admin', $_SESSION['roles']) ; 
-$marieKey = array_search('Marie', $_SESSION['roles'])  ; 
+$marieKey = array_search('Marie', $_SESSION['roles'])  ;
 $maurice = false;
 $france = false;
 $marie = false;
-$admin = false;
+$admin = false; 
 
 if (is_int($marieKey)) {
   $marie = true;

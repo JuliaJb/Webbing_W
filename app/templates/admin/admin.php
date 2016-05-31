@@ -22,11 +22,10 @@ $this->stop('nav');
 
 <?php $this->start('main') ?>
     
-        <ol class="breadcrumb">
-            <li><a href="/home">Home</a></li>
-            <li><a href="/forum">Forum</a></li>
-            <li class="active">Categorie</li>
-        </ol>
+<ol class="breadcrumb">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/forum">Admin</a></li>
+</ol>
 
  
 <?php include '../app/templates/partials/categorie_admin.php'; ?>

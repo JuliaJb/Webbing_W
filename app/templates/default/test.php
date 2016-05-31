@@ -23,16 +23,26 @@ $this->stop('nav');
 
 <h1>This is test</h1>
 
-<h2>This is _SESSION</h2>
+
+
+<h2>This is updated</h2>
+<pre>
+	<?php print_r($updated) ?>
+</pre>
+
+
+<h2>This is new user</h2>
+<pre>
+	<?php print_r($new_user) ?>
+</pre>
+
+
+<h2>This is _SESSION with Roles</h2>
 <pre>
 	<?php print_r($_SESSION) ?>
 </pre>
 
 
-<h2>This is roles</h2>
-<pre>
-	<?php print_r($search_result) ?>
-</pre>
 
 
 

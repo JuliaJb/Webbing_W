@@ -46,7 +46,7 @@ $this->stop('nav');
 			  			<h2><a href="/info_france">Mariage Civil à Saint Germain En Laye</a></h2>
 				  		<p>24 Juin 2017</p>
 				  		<a class="btn_lien_infos" href="/info_france">Plus d'infos</a>
-				  		<a class="btn_lien_forum" href="/forum">Forum France</a>
+				  		<a class="btn_lien_forum" href="/forum/france">Forum France</a>
 				  		<form class="form_home" method="POST">
 			                <p>Serez-vous présent le jour de notre mariage en France ?</p>
 			                <input type="radio" name="rsvpFr" value="1" <?= (isset($profil['rsvpFr']) && $profil['rsvpFr'] == "1")? "checked": " " ?>> Oui
@@ -74,7 +74,7 @@ $this->stop('nav');
 			  			</a>
 				  		<p>28 Octobre 2017</p>
 				  		<a class="btn_lien_infos" href="/info_maurice">Plus d'infos</a>
-				  		<a class="btn_lien_forum" href="/forum">Forum Maurice</a>
+				  		<a class="btn_lien_forum" href="/forum/maurice">Forum Maurice</a>
 				  		<form class="form_home" method="POST">
 			                <p>Serez-vous présent le jour de notre mariage à l'ile Maurice ? *</p>
 			                <input type="radio" name="rsvpMa" value="1" <?= (isset($profil['rsvpMa']) && $profil['rsvpMa'] == "1")? "checked": " " ?>> Oui
@@ -93,7 +93,7 @@ $this->stop('nav');
 			  			<h2>L'enterrement de vie de garçon</h2>
 				  		<p>20 Mai 2017</p>
 				  		<p>Proposez des idées d'activité sur le forum</p>
-				  		<a class="btn_lien_forum" href="/forum">Forum Bachelor</a>
+				  		<a class="btn_lien_forum" href="/forum/bachelor">Forum Bachelor</a>
 			        </div>
 		  			<div class="col-md-6 align_right">
 			  			<img src="/assets/img/evg.jpg" alt="saint germain" width="400px">
@@ -112,7 +112,7 @@ $this->stop('nav');
 			  			<h2>L'enterrement de vie de jeune fille</h2>
 				  		<p>20 Mai 2017</p>
 				  		<p>Proposez des idées d'activité sur le forum</p>
-				  		<a class="btn_lien_forum" href="/forum">Forum Bachelorette</a>
+				  		<a class="btn_lien_forum" href="/forum/bachelorette">Forum Bachelorette</a>
 			        </div>
 		  		</div>
 			</div>	

@@ -111,17 +111,130 @@ class AdminController extends Controller
 		}
 
 		// ******** FIN CONTACT INVITE **********
-
-
-		// ******** FIN AJOUT INVITE **********
-
-
-			
-
-
-		// ******** FIN AJOUT INVITE **********
-
 	}
+
+	public function ajouter_invite() 
+	{
+		$imanager = new \Manager\UserManager();
+		$visiclass = "novisible";
+		$new_user = [];
+		//Id of the newly created user
+		$upId = 0;
+
+		//Gestion d'etapes :
+		if (isset($_POST['btn_ajouter']))
+		{
+			$errors = [];
+			//Gestion d'erreurs
+			if (empty($_POST['inp_firstname']))
+			{
+				$errors['firstname'] = "Vous devez indiquer le Prénom de votre invité.";
+			}
+			
+			if (empty($_POST['inp_lastname']))
+			{
+				$errors['lastname'] = "Vous devez indiquer le Nom de votre invité.";
+			}
+
+			//Insert User, depending on errors : 
+			if (empty($errors))
+			{
+				$data = [
+				'lastname' => $_POST['inp_lastname'],
+				'firstname' => $_POST['inp_firstname']
+				];
+
+				$new_user = $imanager->insert($data);
+
+				//This ID will be used to update Roles
+				$upId = $new_user['id'];
+
+				$visiclass = "visible-inline";
+
+				$this->show('admin/ajouter_invite', ['visiclass' => $visiclass, 'new_user' => $new_user, 'upId' => $upId ]);
+
+			}
+			else 
+			{
+				$this->show('admin/ajouter_invite', ['errors' => $errors,]);
+	
+			}
+
+		}
+
+		if (isset($_POST['btnAddGuest']))
+		{
+			$visiclass = "visible-inline";
+
+			$c_errors = [];
+
+			//Gestion d'Erreurs
+			if (!isset($_POST['invitFr']))
+			{
+				$c_errors['invitFr'] = "Vous devez indiquer si la personne est invité en France";
+			}
+
+			if (!isset($_POST['invitVin']))
+			{
+				$c_errors['invitVin'] = "Vous devez indiquer si la personne est invité au  Vin d'Honneur";
+			}
+
+			if (!isset($_POST['invitMa']))
+			{
+				$c_errors['invitMa'] = "Vous devez indiquer si la personne est invité à l'Île Maurice";
+			}
+
+			if (!isset($_POST['bachelor']))
+			{
+				$c_errors['bachelor'] = "Vous devez indiquer si la personne est invité à l'EVG'";
+			}
+
+			if (!isset($_POST['bachelorette']))
+			{
+				$c_errors['bachelorette'] = "Vous devez indiquer si la personne est invité à l'EVJF'";
+			}
+
+
+			//If there are errors
+			if (!empty($c_errors))
+			{
+				$visiclass = "visible-inline";
+				$this->show('admin/ajouter_invite', ['c_errors' => $c_errors, 'visiclass' => 
+				$visiclass, 'new_user'=> $new_user ]);
+			}
+			
+			//Insert Roles in DB
+			else
+			{
+				//update users
+				$updateData = [
+					'invitFr' => $_POST['invitFr'],
+					'invitVin' => $_POST['invitVin'],
+					'invitMa' => $_POST['invitMa']
+				];
+
+				//$upId  created in line 149 with new invite insert
+
+				$updated = $imanager->update($updateData, 35);
+
+				$upId = $_POST['upId'];
+
+				$this->show('default/test', ['updated' => $updated]);
+
+				//insert roles_users
+			}
+		}
+
+
+		$this->show('admin/ajouter_invite', ['visiclass' => $visiclass, 'new_user'=> $new_user]);
+	}
+
+
+
+
+
+	// ******** FIN AJOUT INVITE **********
+
 
 	public function profil_invites()
 	{	
