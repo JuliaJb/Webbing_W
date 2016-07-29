@@ -60,7 +60,7 @@ $this->stop('nav');
 						<label for="sel_category">Catégorie</label>
 	                    <select class="form-control" name="inp_category" id="sel_category">
 		                    <?php foreach ($_SESSION['roles'] as $key => $value) : ?>
-		                    	<?php if ($key != 'Admin'): ?>
+		                    	<?php if ($value != 'Admin'): ?>
 		                    		<option value="<?= $value ?>"><?= $value ?></option>
 		                    	<?php endif; ?>
 		                    <?php endforeach; ?>
