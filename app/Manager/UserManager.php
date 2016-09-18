@@ -3,6 +3,19 @@ namespace Manager;
 
 class UserManager extends \W\Manager\Manager {
 
+	public function getNamesById($id)
+	{
+
+		$sql = "SELECT firstname, lastname FROM " . $this->table . " WHERE id = :id";
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(":id", $id);
+		$sth->execute();
+
+		return $sth->fetch();
+
+	}
+
+
 	public function checkInscription($lastname, $firstname)
 	{
 

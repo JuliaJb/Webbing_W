@@ -50,6 +50,9 @@ $(document).ready(function(){
 // FIN MANSONRY 
 
 
+// CHAINED POUR CHAINER LE PRENOM AVEC LE NOM DE FAMILLE
+  $("#lastname").chained("#firstname");
+// FIN CHAINED
 
 
 

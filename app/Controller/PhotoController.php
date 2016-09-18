@@ -13,11 +13,17 @@ class PhotoController extends Controller
 	{
 		
 		$manager = new \Manager\PhotoManager();
+		$managerUser = new \Manager\UserManager();
+
+		$invites = $managerUser->findAll($orderBy = "1", $orderDir = "ASC");
+
+
 		$maxsize = 1048576;
 		$erreurPhoto = [];
 		$maxwidth = "";
 		$maxheight = "";
-		
+
+
 		if (isset($_POST['poster'])) 
 		{
 
@@ -82,28 +88,36 @@ class PhotoController extends Controller
 						'filesize' => $_FILES['photo']['size'],
 						'category' => "category",
 						'finalname' => $nom,
-						'user_lastname' => $_SESSION['lastname'],
-						'user_firstname' => $_SESSION['firstname'],
+						'user_id' => $_SESSION['id'],
 					];
 						
-					$result = $manager->insert($data);
+					$insertPhoto = $manager->insert($data);
 
 				}
 
 			}
 
-			$result = $manager->findAll($orderBy = "1", $orderDir = "DESC");
+			$result = $manager->getPhotos($orderBy = "1", $orderDir = "DESC");
 
-			$this->show('default/photo', ['result' => $result, 'erreurPhoto' => $erreurPhoto]);
+			$this->show('default/photo', ['result' => $result, 'erreurPhoto' => $erreurPhoto, 'invites' => $invites]);
 
 			
 		}
 
+		if ( isset($_GET['firstname']) && isset($_GET['lastname']) ) 
+		{
+			$firstname = $_GET['firstname'];
+			$lastname = $_GET['lastname'];
+			$result = $manager->getPhotosByNames($firstname, $lastname);
 
-		$result = $manager->findAll($orderBy = "1", $orderDir = "DESC");
+			$this->show('default/photo', ['result' => $result, 'invites' => $invites]);
+		}
 
 
-		$this->show('default/photo', ['result' => $result]);
+		$result = $manager->getPhotos($orderBy = "1", $orderDir = "DESC");
+
+
+		$this->show('default/photo', ['result' => $result, 'invites' => $invites]);
 	}
 
 

@@ -55,9 +55,6 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 50px;
 }
 
-.form_photo {
-	margin: 50px auto;
-}
 
 .btn_form_darkBlue {
   background: rgba(13,71,161,0.8);
@@ -321,6 +318,9 @@ footer h3 {
   border-radius: 8px;
 }
 
+.form_photo, .formFiltrePhoto {
+  margin: 50px auto;
+}
 
   /* ************************************ //
   //                                      //

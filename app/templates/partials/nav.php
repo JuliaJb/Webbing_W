@@ -33,7 +33,7 @@ if (is_int($mauriceKey)) {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/home">Marcus & Ginette</a>
+        <a class="navbar-brand" href="/home">Alexandra &amp; Joan</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -41,7 +41,7 @@ if (is_int($mauriceKey)) {
         <ul class="nav navbar-nav">
           <li><a href="/home"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
           <li><a href="/forum/<?= ($france)? "France":"Maurice" ?>">Forum</a></li>
-          <li><a href="/photo">Photo</a></li>    
+          <li><a href="/photo">Photos</a></li>    
           <?php if ($france && $maurice) : ?>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infos <span class="caret"></span></a>
