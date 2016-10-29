@@ -83,10 +83,9 @@
 	left: 0;
 }
 
-.plan_table .col-md-3:nth-child(3){
-	padding-top: 114px;
+.container_btn_plan {
+	text-align: center;
 }
-
 
 
 
